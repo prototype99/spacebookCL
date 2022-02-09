@@ -22,6 +22,7 @@ class App extends Component {
         <View>
           <TextInput placeholder="Spaceplease enter your SpacEmail" onChangeText={this.handleEmailInput} value={this.state.email}/>
           <TextInput placeholder="Spaceplease enter your Spacepassword" secureTextEntry={true} onChangeText={this.handlePasswdInput} value={this.state.passwd}/>
+          <Button title={"Spacelog in"}/>
         </View>
     );
   }
