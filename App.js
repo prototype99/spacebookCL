@@ -4,6 +4,10 @@ import { Text, TextInput, View, Button, StyleSheet, Alert } from 'react-native';
 class App extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      email: '',
+      passwd: ''
+    }
   }
 
   render() {
