@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Text, TextInput, View, Button, StyleSheet, Alert } from 'react-native';
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -9,14 +8,12 @@ class App extends Component {
       passwd: ''
     }
   }
-
   handleEmailInput = (email) => {
       this.setState({email: email})
   }
   handlePasswdInput = (passwd) => {
       this.setState({passwd: passwd})
   }
-
   render() {
     return (
         <View>
@@ -26,10 +23,7 @@ class App extends Component {
         </View>
     );
   }
-
 }
-
 const styles = StyleSheet.create({
 });
-
 export default App
