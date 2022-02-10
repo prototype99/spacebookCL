@@ -15,6 +15,8 @@ class App extends Component {
       this.setState({passwd: passwd})
   }
   login = () => {
+      Alert.alert('spacEmail: ' + this.state.email)
+      Alert.alert('spacepassword: ' + this.state.passwd)
   }
   render() {
     return (
