@@ -14,12 +14,14 @@ class App extends Component {
   handlePasswdInput = (passwd) => {
       this.setState({passwd: passwd})
   }
+  login = () => {
+  }
   render() {
     return (
         <View>
           <TextInput placeholder="Spaceplease enter your SpacEmail" onChangeText={this.handleEmailInput} value={this.state.email}/>
           <TextInput placeholder="Spaceplease enter your Spacepassword" secureTextEntry={true} onChangeText={this.handlePasswdInput} value={this.state.passwd}/>
-          <Button title={"Spacelog in"}/>
+          <Button onPress={this.login} title={"Spacelog in"}/>
         </View>
     );
   }
