@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Text, TextInput, View, Button, StyleSheet, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
 class App extends Component {
   constructor(props){
     super(props);
@@ -30,4 +33,9 @@ class App extends Component {
 }
 const styles = StyleSheet.create({
 });
-export default App
+export default function App() {
+    <NavigationContainer>
+        <Stack.Navigator>
+        </Stack.Navigator>
+    </NavigationContainer>
+}
