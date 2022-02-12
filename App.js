@@ -7,7 +7,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Spacelog in" component={login}/>
+                <Stack.Screen name="Endless spacepossibilities await!" component={login}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
