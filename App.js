@@ -10,17 +10,17 @@ export default function App() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen
-                    name="login"
-                    component={ScrnLogin}
-                    options={{
-                        title: 'Endless spacepossibilities await!'
-                    }}
-                />
-                <Stack.Screen
                     name="post"
                     component={ScrnPost}
                     options={{
                         title: 'Spacetacular spaceposts'
+                    }}
+                />
+                <Stack.Screen
+                    name="login"
+                    component={ScrnLogin}
+                    options={{
+                        title: 'Endless spacepossibilities await!'
                     }}
                 />
                 <Stack.Screen
