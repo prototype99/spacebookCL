@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { TextInput, View, Button, StyleSheet, Alert } from 'react-native';
+import { TextInput, View, Button, StyleSheet} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 class ScrnLogin extends Component {
   constructor(props){
     super(props);
@@ -14,13 +15,32 @@ class ScrnLogin extends Component {
   handlePasswdInput = (passwd) => {
       this.setState({passwd: passwd})
   }
-  login = () => {
-      Alert.alert('spacEmail: ' + this.state.email)
-      Alert.alert('spacepassword: ' + this.state.passwd)
-      this.props.navigation.navigate("post")
-  }
-  signup = () => {
-      this.props.navigation.navigate("signup")
+  login = async () => {
+      //Validation here...
+      return fetch("http://localhost:3333/api/1.0.0/login", {
+          method: 'post',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.state)
+      })
+          .then((response) => {
+              if(response.status === 200){
+                  return response.json()
+              }else if(response.status === 400){
+                  throw 'Invalid spacEmail or spacepassword';
+              }else{
+                  throw 'A spacError has spaceocurred spacepreventing spacelog in';
+              }
+          })
+          .then(async (responseJson) => {
+              console.log(responseJson);
+              await AsyncStorage.setItem('@session_token', responseJson.token);
+              this.props.navigation.navigate("Home");
+          })
+          .catch((error) => {
+              console.log(error);
+          })
   }
   render() {
     return (
@@ -32,7 +52,7 @@ class ScrnLogin extends Component {
                 title={"Spacelog in now!"}
             />
             <Button
-                onPress={this.signup}
+                onPress={() => this.props.navigation.navigate("signup")}
                 title={"Spacenew? Spacesign up now!"}
             />
         </View>
