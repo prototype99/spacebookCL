@@ -10,16 +10,25 @@ export default function App() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen
-                    name="Endless spacepossibilities await!"
+                    name="login"
                     component={scrnlogin}
+                    options={{
+                        title: 'Endless spacepossibilities await!'
+                    }}
                 />
                 <Stack.Screen
-                    name="Spacetacular spaceposts"
+                    name="post"
                     component={scrnpost}
+                    options={{
+                        title: 'Spacetacular spaceposts'
+                    }}
                 />
                 <Stack.Screen
-                    name="Your spacejourney spacebegins!"
+                    name="signup"
                     component={scrnsignup}
+                    options={{
+                        title: 'Your spacejourney spacebegins!'
+                    }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

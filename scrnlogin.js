@@ -17,10 +17,10 @@ class scrnlogin extends Component {
   login = () => {
       Alert.alert('spacEmail: ' + this.state.email)
       Alert.alert('spacepassword: ' + this.state.passwd)
-      this.props.navigation.navigate("Spacetacular spaceposts")
+      this.props.navigation.navigate("post")
   }
   signup = () => {
-      this.props.navigation.navigate("Your spacejourney spacebegins!")
+      this.props.navigation.navigate("signup")
   }
   render() {
     return (
