@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TextInput, View, Button, StyleSheet, Alert } from 'react-native';
-class scrnsignup extends Component {
+class ScrnSignup extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -34,4 +34,4 @@ class scrnsignup extends Component {
 }
 const styles = StyleSheet.create({
 });
-export default scrnsignup
+export default ScrnSignup
