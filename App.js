@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScrnLogin from './ScrnLogin';
 import ScrnPost from "./ScrnPost";
+import ScrnSettings from "./ScrnSettings";
 import ScrnSignup from "./ScrnSignup";
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -21,6 +22,13 @@ export default function App() {
                     component={ScrnLogin}
                     options={{
                         title: 'Endless spacepossibilities await!'
+                    }}
+                />
+                <Stack.Screen
+                    name="settings"
+                    component={ScrnSettings}
+                    options={{
+                        title: 'Spacesettings and spacelog out'
                     }}
                 />
                 <Stack.Screen
