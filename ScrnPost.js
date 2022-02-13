@@ -21,7 +21,7 @@ class ScrnPost extends Component {
     }
     getData = async () => {
         const value = await AsyncStorage.getItem('@session_token');
-        return fetch("http://localhost:3333/api/1.0.0/search", {
+        return fetch("http://192.168.8.101:3333/api/1.0.0/search", {
             'headers': {
                 'X-Authorization':  value
             }
