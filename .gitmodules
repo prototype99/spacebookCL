@@ -1,3 +1,6 @@
 [submodule "spacebookSV"]
 	path = spacebookSV
 	url = https://github.com/prototype99/spacebookSV.git
+[submodule "spacebookIP"]
+	path = spacebookIP
+	url = https://github.com/prototype99/spacebookIP.git

@@ -27,7 +27,7 @@ class ScrnSettings extends Component {
     logout = async () => {
         let token = await AsyncStorage.getItem('@session_token');
         await AsyncStorage.removeItem('@session_token');
-        return fetch("http://192.168.8.101:3333/api/1.0.0/logout", {
+        return fetch("http://" + global.testip + ":3333/api/1.0.0/logout", {
             method: 'post',
             headers: {
                 "X-Authorization": token

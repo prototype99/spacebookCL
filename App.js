@@ -1,4 +1,5 @@
 import React from 'react';
+import {TEST_IP} from "react-native-dotenv";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScrnLogin from './ScrnLogin';
@@ -6,6 +7,7 @@ import ScrnPost from "./ScrnPost";
 import ScrnSettings from "./ScrnSettings";
 import ScrnSignup from "./ScrnSignup";
 const Stack = createNativeStackNavigator();
+global.testip = TEST_IP;
 export default function App() {
     return (
         <NavigationContainer>
