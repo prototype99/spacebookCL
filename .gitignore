@@ -20,6 +20,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+project.xcworkspace
 
 # Android/IntelliJ
 #
@@ -42,6 +43,12 @@ buck-out/
 *.keystore
 !debug.keystore
 
+# Bundle artifacts
+*.jsbundle
+
+# CocoaPods
+/ios/Pods/
+
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
@@ -53,8 +60,7 @@ buck-out/
 */fastlane/Preview.html
 */fastlane/screenshots
 
-# Bundle artifact
-*.jsbundle
-
-# CocoaPods
-/ios/Pods/
+# Expo
+.expo/
+web-build/
+dist/
