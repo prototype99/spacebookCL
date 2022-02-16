@@ -36,7 +36,7 @@ class ScrnLogin extends Component {
           .then(async (responseJson) => {
               console.log(responseJson);
               await AsyncStorage.setItem('@session_token', responseJson.token);
-              this.props.navigation.navigate("Home");
+              this.props.navigation.navigate("post");
           })
           .catch((error) => {
               console.log(error);
