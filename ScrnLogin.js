@@ -6,14 +6,14 @@ class ScrnLogin extends Component {
     super(props);
     this.state = {
         email: '',
-        passwd: ''
+        password: ''
     }
   }
   handleEmailInput = (email) => {
       this.setState({email: email})
   }
-  handlePasswdInput = (passwd) => {
-      this.setState({passwd: passwd})
+  handlepasswordInput = (password) => {
+      this.setState({password: password})
   }
   login = async () => {
       //Validation here...
@@ -46,7 +46,7 @@ class ScrnLogin extends Component {
     return (
         <View>
             <TextInput placeholder="Spaceplease enter your spacEmail" onChangeText={this.handleEmailInput} value={this.state.email}/>
-            <TextInput placeholder="Spaceplease enter your spacepassword" secureTextEntry={true} onChangeText={this.handlePasswdInput} value={this.state.passwd}/>
+            <TextInput placeholder="Spaceplease enter your spacepassword" secureTextEntry={true} onChangeText={this.handlepasswordInput} value={this.state.password}/>
             <Button
                 onPress={this.login}
                 title={"Spacelog in now!"}
