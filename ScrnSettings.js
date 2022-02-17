@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, ScrollView, Text, ToastAndroid} from 'react-native';
+import {Button, ScrollView, ToastAndroid} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 class ScrnSettings extends Component {
   constructor(props){
