@@ -67,15 +67,15 @@ class ScrnPost extends Component {
     } else {
       return (
           <View>
-            <FlatList
-                data={this.state.listData}
-                renderItem={({item}) => (
+              <FlatList
+                  data={this.state.listData}
+                  renderItem={({item}) => (
                     <View>
                       <Text>{item.user_givenname} {item.user_familyname}</Text>
                     </View>
-                )}
-                keyExtractor={(item,index) => item.user_id.toString()}
-            />
+                  )}
+                  keyExtractor={(item,index) => item.user_id.toString()}
+              />
           </View>
       );
     }
