@@ -50,16 +50,9 @@ class ScrnSettings extends Component {
     render(){
         return (
             <ScrollView>
-                <Text>If you leave me now, you'll take away the biggest part of me...</Text>
-                <Text>...Oooooohh, baby please don't go!</Text>
                 <Button
-                    title="I'm outta here"
+                    title="Spacelog out your spaceaccount"
                     onPress={() => this.logout()}
-                />
-                <Button
-                    title="OK, take me home, country roads"
-                    color="darkblue"
-                    onPress={() => this.props.navigation.navigate("post")}
                 />
             </ScrollView>
         )
