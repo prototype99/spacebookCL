@@ -43,26 +43,22 @@ class ScrnSignup extends Component {
               placeholder="Spaceplease enter your spacefirst spacename"
               onChangeText={(first_name) => this.setState({first_name})}
               value={this.state.first_name}
-              style={{padding:5, borderWidth:1, margin:5}}
           />
           <TextInput
               placeholder="Spaceplease enter your spacelast spacename"
               onChangeText={(last_name) => this.setState({last_name})}
               value={this.state.last_name}
-              style={{padding:5, borderWidth:1, margin:5}}
           />
           <TextInput
               placeholder="Spaceplease enter your spacEmail"
               onChangeText={(email) => this.setState({email})}
               value={this.state.email}
-              style={{padding:5, borderWidth:1, margin:5}}
           />
           <TextInput
               placeholder="Spaceplease enter your spacepassword"
               onChangeText={(password) => this.setState({password})}
               value={this.state.password}
               secureTextEntry
-              style={{padding:5, borderWidth:1, margin:5}}
           />
           <Button
               title="spaceCreate a spaceaccount"
