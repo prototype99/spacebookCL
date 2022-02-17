@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {FlatList, Text, View} from 'react-native';
+import {Button, FlatList, Text, View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 class ScrnPost extends Component {
   constructor(props){
@@ -75,6 +75,10 @@ class ScrnPost extends Component {
                     </View>
                   )}
                   keyExtractor={(item,index) => item.user_id.toString()}
+              />
+              <Button
+                  onPress={() => this.props.navigation.navigate("settings")}
+                  title={"Spacesettings"}
               />
           </View>
       );
