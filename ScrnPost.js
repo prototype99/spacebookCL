@@ -80,6 +80,10 @@ class ScrnPost extends Component {
                   onPress={() => this.props.navigation.navigate("settings")}
                   title={"Spacesettings"}
               />
+              <Button
+                  onPress={() => this.props.navigation.navigate("search")}
+                  title={"Spacelocate"}
+              />
           </View>
       );
     }

@@ -6,6 +6,7 @@ import ScrnLogin from './ScrnLogin';
 import ScrnPost from "./ScrnPost";
 import ScrnSettings from "./ScrnSettings";
 import ScrnSignup from "./ScrnSignup";
+import ScrnSearch from "./ScrnSearch";
 const Stack = createNativeStackNavigator();
 global.svurl = "http://" + TEST_IP + ":3333/api/1.0.0/";
 export default function App() {
@@ -24,6 +25,13 @@ export default function App() {
                     component={ScrnLogin}
                     options={{
                         title: 'Endless spacepossibilities await!'
+                    }}
+                />
+                <Stack.Screen
+                    name="search"
+                    component={ScrnSearch}
+                    options={{
+                        title: 'Spaceselocate astronauts'
                     }}
                 />
                 <Stack.Screen
