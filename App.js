@@ -7,7 +7,7 @@ import ScrnPost from "./ScrnPost";
 import ScrnSettings from "./ScrnSettings";
 import ScrnSignup from "./ScrnSignup";
 const Stack = createNativeStackNavigator();
-global.testip = TEST_IP;
+global.svurl = "http://" + TEST_IP + ":3333/api/1.0.0/";
 export default function App() {
     return (
         <NavigationContainer>

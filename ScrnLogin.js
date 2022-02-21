@@ -17,7 +17,7 @@ class ScrnLogin extends Component {
   }
   login = async () => {
       //Validation here...
-      return fetch("http://" + global.testip + ":3333/api/1.0.0/login", {
+      return fetch(svurl + "login", {
           method: 'post',
           headers: {
               'Content-Type': 'application/json'

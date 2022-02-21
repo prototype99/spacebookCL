@@ -12,7 +12,7 @@ class ScrnSignup extends Component {
   }
   signup = () => {
     //Validation here...
-    return fetch("http://" + global.testip + ":3333/api/1.0.0/user", {
+    return fetch(svurl + "user", {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
