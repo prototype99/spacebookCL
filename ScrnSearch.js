@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-import {View} from 'react-native';
+import {TextInput, View} from 'react-native';
 
 class ScrnSearch extends Component {
   constructor(props){
       super(props);
+      this.state = {
+          query: ''
+      }
+  }
+  searchString = (query) => {
+      //stuff
   }
   render() {
       return (
           <View>
+              <TextInput placeholder="Spaceplease enter your spacequery" onChangeText={this.searchString} value={this.state.query}/>
           </View>
       );
   }
