@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {TextInput, Button, ScrollView} from 'react-native';
-class ScrnSignup extends Component {
+export default class ScrnSignup extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -68,4 +68,3 @@ class ScrnSignup extends Component {
     )
   }
 }
-export default ScrnSignup

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {TextInput, View} from 'react-native';
-
-class ScrnSearch extends Component {
+export default class ScrnSearch extends Component {
   constructor(props){
       super(props);
       this.state = {
@@ -19,4 +18,3 @@ class ScrnSearch extends Component {
       );
   }
 }
-export default ScrnSearch

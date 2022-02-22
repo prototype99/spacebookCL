@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {FlatList, Text, View} from "react-native";
-export class ComponentUser extends Component {
+export default class ComponentUser extends Component {
   constructor(props){
       super(props);
       this.state = {

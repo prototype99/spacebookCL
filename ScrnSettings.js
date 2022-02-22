@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Button, ScrollView, ToastAndroid} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-class ScrnSettings extends Component {
+export default class ScrnSettings extends Component {
   constructor(props){
       super(props);
       this.state = {
@@ -58,4 +58,3 @@ class ScrnSettings extends Component {
         )
     }
 }
-export default ScrnSettings

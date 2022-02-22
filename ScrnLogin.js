@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TextInput, View, Button, StyleSheet} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-class ScrnLogin extends Component {
+export default class ScrnLogin extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -61,4 +61,3 @@ class ScrnLogin extends Component {
 }
 const styles = StyleSheet.create({
 });
-export default ScrnLogin

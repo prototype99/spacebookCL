@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, View} from 'react-native';
-import {ComponentUser} from "./ComponentUser";
-class ScrnPost extends ComponentUser {
+import ComponentUser from "./ComponentUser";
+export default class ScrnPost extends ComponentUser {
   constructor(props){
       super(props);
   }
@@ -21,4 +21,3 @@ class ScrnPost extends ComponentUser {
       );
   }
 }
-export default ScrnPost
