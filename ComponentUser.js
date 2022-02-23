@@ -21,7 +21,7 @@ export default class ComponentUser extends Component {
     }
     getData = async () => {
         const value = await AsyncStorage.getItem('@session_token');
-        return fetch(svurl + "search?search_in=all", {
+        return fetch(svurl + "search?search_in=" + this.props.scope, {
             'headers': {
                 'X-Authorization':  value
             }

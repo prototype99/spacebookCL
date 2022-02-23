@@ -8,7 +8,7 @@ export default class ScrnPost extends ComponentUser {
   render() {
       return (
           <View>
-              <ComponentUser navigation={this.props.navigation}/>
+              <ComponentUser navigation={this.props.navigation} scope={"all"}/>
               <Button
                   onPress={() => this.props.navigation.navigate("settings")}
                   title={"Spacesettings"}
