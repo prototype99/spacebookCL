@@ -370,7 +370,7 @@ F;W2 2 8
 F;W4 4 10
 F;W5 5 7
 F;W7 7 10
-F;W8 8 2
+F;W8 8 11
 F;W10 10 7
 F;W11 11 10
 F;W13 13 4
@@ -382,7 +382,7 @@ C;X2;K"functionality"
 C;X4;K"name"
 C;X5;K"extension"
 C;X7;K"name"
-C;X8;K"ux"
+C;X8;K"user experience"
 C;X10;K"name"
 C;X11;K"additional skills"
 C;X13;K"name"
@@ -446,7 +446,7 @@ C;X2;K0
 C;Y14;X1;K"reject friend request"
 C;X2;K0
 C;Y15;X1;K"search users"
-C;X2;K0
+C;X2;K1
 C;Y16;X1;K"get posts"
 C;X2;K0
 C;Y17;X1;K"add post"
@@ -462,7 +462,7 @@ C;X2;K0
 C;Y22;X1;K"unlike post"
 C;X2;K0
 C;Y23;X1;K"endpoints done:"
-C;X2;K3;Esum(R[-20]C:R[-1]C)
+C;X2;K4;Esum(R[-20]C:R[-1]C)
 C;Y24;X1;K"bugs/inefficiencies"
 C;X2;K1
 C;Y25;X1;K"mark"

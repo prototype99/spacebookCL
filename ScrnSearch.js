@@ -5,7 +5,7 @@ export default class ScrnSearch extends ComponentUser {
   constructor(props){
       super(props);
       this.state = {
-          query: ''
+          query: null
       }
   }
   handleSearchInput = (query) => {
@@ -15,7 +15,7 @@ export default class ScrnSearch extends ComponentUser {
       return (
           <View>
               <TextInput placeholder="Spaceplease enter your spacequery" onChangeText={this.handleSearchInput} value={this.state.query}/>
-              <ComponentUser navigation={this.props.navigation} scope={"all"}/>
+              <ComponentUser navigation={this.props.navigation} query={this.state.query} scope={"all"}/>
           </View>
       );
   }

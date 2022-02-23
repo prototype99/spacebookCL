@@ -16,12 +16,21 @@ export default class ComponentUser extends Component {
 
         this.getData();
     }
+    componentDidUpdate(prevProps) {
+        if (prevProps.query !== this.props.query) {
+            this.getData();
+        }
+    }
     componentWillUnmount() {
         this.unsubscribe();
     }
     getData = async () => {
         const value = await AsyncStorage.getItem('@session_token');
-        return fetch(svurl + "search?search_in=" + this.props.scope, {
+        let fetchString = svurl + "search?search_in=" + this.props.scope;
+        if (this.props.query != null) {
+            fetchString = fetchString + "&q=" + this.props.query;
+        }
+        return fetch(fetchString, {
             'headers': {
                 'X-Authorization':  value
             }
