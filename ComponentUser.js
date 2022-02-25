@@ -41,7 +41,7 @@ export default class ComponentUser extends Component {
                 }else if(response.status === 401){
                     this.props.navigation.navigate("login");
                 }else{
-                    throw 'A spacError has spaceocurred spacepreventing spacelog in';
+                    throw 'An astroerror has spaceocurred spacepreventing spacelog in';
                 }
             })
             .then((responseJson) => {

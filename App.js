@@ -24,7 +24,7 @@ export default function App() {
                     name="login"
                     component={ScrnLogin}
                     options={{
-                        title: 'Endless spacepossibilities await!'
+                        title: 'Endless spacepossibilities spaceawait!'
                     }}
                 />
                 <Stack.Screen

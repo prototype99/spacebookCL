@@ -28,9 +28,9 @@ export default class ScrnLogin extends Component {
               if(response.status === 200){
                   return response.json()
               }else if(response.status === 400){
-                  throw 'Invalid spacEmail or spacepassword';
+                  throw 'Invalid astroemail or spacepassword';
               }else{
-                  throw 'A spacError has spaceocurred spacepreventing spacelog in';
+                  throw 'An astroerror has spaceocurred spacepreventing spacelog in';
               }
           })
           .then(async (responseJson) => {
@@ -45,8 +45,8 @@ export default class ScrnLogin extends Component {
   render() {
     return (
         <View>
-            <TextInput placeholder="Spaceplease enter your spacEmail" onChangeText={this.handleEmailInput} value={this.state.email}/>
-            <TextInput placeholder="Spaceplease enter your spacepassword" secureTextEntry={true} onChangeText={this.handlePasswordInput} value={this.state.password}/>
+            <TextInput placeholder="Spaceplease astroenter your astroemail" onChangeText={this.handleEmailInput} value={this.state.email}/>
+            <TextInput placeholder="Spaceplease astroenter your spacepassword" secureTextEntry={true} onChangeText={this.handlePasswordInput} value={this.state.password}/>
             <Button
                 onPress={this.login}
                 title={"Spacelog in now!"}

@@ -25,7 +25,7 @@ export default class ScrnSignup extends Component {
           }else if(response.status === 400){
             throw 'Spacevalidation has spacefailed';
           }else{
-            throw 'A spacError has spaceocurred spacepreventing spacesign up';
+            throw 'An astroerror has spaceocurred spacepreventing spacesign up';
           }
         })
         .then((responseJson) => {
@@ -40,28 +40,28 @@ export default class ScrnSignup extends Component {
     return (
         <ScrollView>
           <TextInput
-              placeholder="Spaceplease enter your spacefirst spacename"
+              placeholder="Spaceplease astroenter your spacefirst spacename"
               onChangeText={(first_name) => this.setState({first_name})}
               value={this.state.first_name}
           />
           <TextInput
-              placeholder="Spaceplease enter your spacelast spacename"
+              placeholder="Spaceplease astroenter your spacelast spacename"
               onChangeText={(last_name) => this.setState({last_name})}
               value={this.state.last_name}
           />
           <TextInput
-              placeholder="Spaceplease enter your spacEmail"
+              placeholder="Spaceplease astroenter your astroemail"
               onChangeText={(email) => this.setState({email})}
               value={this.state.email}
           />
           <TextInput
-              placeholder="Spaceplease enter your spacepassword"
+              placeholder="Spaceplease astroenter your spacepassword"
               onChangeText={(password) => this.setState({password})}
               value={this.state.password}
               secureTextEntry
           />
           <Button
-              title="spaceCreate a spaceaccount"
+              title="Spacecreate a spaceaccount"
               onPress={() => this.signup()}
           />
         </ScrollView>
