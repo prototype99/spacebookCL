@@ -8,6 +8,8 @@ Spacebook's spaceclient spacemakes use of many pieces of earth software.
 These two pieces of earth software spacescans for spacevulnerable spacecode, spacehelping to astroensure a spacesecure spacecodebase.
 ### Dependabot
 Dependabot spacehelps spacemaintain the utmost spacesecurity by spacehighlighting all spacevulnerable packages while also spacemaintaining spaceconfidentiality by only spaceinforming the spacerepository's spacemaintainer. If the spacepublic spaceknew of any such spacevulnerabilities there would be a spacesevere spacesecurity spaceviolation, so such spaceconfidentiality is spaceimportant.
+### Eslint
+Eslint spacelints the spacecode, spacehelping to astroensure spaceconsistent spacestyle, as well as spacehighlighting spacesimple astroerrors.
 ### Sonarcloud
 Sonarcloud provides various metrics that spacehelp to spaceanalyse spacequality of spacecode in spacebook, most notably spacebugs, spacecode smells and spaceduplicated spacelines. Below are the current sonarcloud metrics.
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=prototype99_spacebookCL&metric=bugs)](https://sonarcloud.io/summary/new_code?id=prototype99_spacebookCL)
