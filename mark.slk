@@ -396,7 +396,7 @@ C;X8;K20
 C;X10;K"weight"
 C;X11;K10
 C;X13;K"total"
-C;X14;K21;Esum((R[23]C[-12]*(RC[-12]/100)),(R[3]C[-9]*(RC[-9]/100)),(R[5]C[-6]*(RC[-6]/100)),(R[4]C[-3]*(RC[-3]/100)))
+C;X14;K24;Esum((R[23]C[-12]*(RC[-12]/100)),(R[3]C[-9]*(RC[-9]/100)),(R[5]C[-6]*(RC[-6]/100)),(R[4]C[-3]*(RC[-3]/100)))
 C;Y3;X1;K"add user"
 C;X2;K1
 C;X4;K"drafts"
@@ -412,7 +412,7 @@ C;X5;K0
 C;X7;K"error handling"
 C;X8;K1
 C;X10;K"style guide"
-C;X11;K0
+C;X11;K1
 C;Y5;X1;K"log out"
 C;X2;K1
 C;X4;K"mark"
@@ -426,7 +426,7 @@ C;X2;K0
 C;X7;K"accessibility"
 C;X8;K0
 C;X10;K"mark"
-C;X11;K30;Eifs(sum(R[-3]C:R[-1]C)=3,86,and(R[-3]C=1,R[-2]C=1),60,R[-3]C=1,30)
+C;X11;K60;Eifs(sum(R[-3]C:R[-1]C)=3,86,and(R[-3]C=1,R[-2]C=1),60,R[-3]C=1,30)
 C;Y7;X1;K"edit user info"
 C;X2;K0
 C;X7;K"mark"
