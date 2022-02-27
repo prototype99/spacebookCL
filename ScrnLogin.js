@@ -59,5 +59,3 @@ export default class ScrnLogin extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-});
