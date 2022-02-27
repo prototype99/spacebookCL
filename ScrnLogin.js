@@ -7,14 +7,14 @@ export default class ScrnLogin extends Component {
     this.state = {
       email: '',
       password: ''
-    }
+    };
   }
   handleEmailInput = email => {
-    this.setState({email: email})
-  }
+    this.setState({email: email});
+  };
   handlePasswordInput = password => {
-    this.setState({password: password})
-  }
+    this.setState({password: password});
+  };
   login = async () => {
     //Validation here...
     return fetch(svurl + 'login', {
@@ -26,7 +26,7 @@ export default class ScrnLogin extends Component {
     })
       .then(response => {
         if (response.status === 200) {
-          return response.json()
+          return response.json();
         } else if (response.status === 400) {
           throw 'Invalid astroemail or spacepassword';
         } else {
@@ -40,8 +40,8 @@ export default class ScrnLogin extends Component {
       })
       .catch((error) => {
         console.log(error);
-      })
-  }
+      });
+  };
   render() {
     return (
       <View>

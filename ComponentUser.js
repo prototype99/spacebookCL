@@ -7,7 +7,7 @@ export default class ComponentUser extends Component {
     this.state = {
       isLoading: true,
       listData: []
-    }
+    };
   }
   componentDidMount() {
     this.unsubscribe = this.props.navigation.addListener('focus', () => {
@@ -37,7 +37,7 @@ export default class ComponentUser extends Component {
     })
       .then((response) => {
         if (response.status === 200) {
-          return response.json()
+          return response.json();
         } else if (response.status === 401) {
           this.props.navigation.navigate('login');
         } else {

@@ -6,7 +6,7 @@ export default class ScrnSettings extends Component {
     super(props);
     this.state = {
       token: ''
-    }
+    };
   }
   componentDidMount() {
     this._unsubscribe = this.props.navigation.addListener('focus', () => {
@@ -23,7 +23,7 @@ export default class ScrnSettings extends Component {
     } else {
       this.props.navigation.navigate('login');
     }
-  }
+  };
   logout = async () => {
     let token = await AsyncStorage.getItem('@session_token');
     await AsyncStorage.removeItem('@session_token');
@@ -31,7 +31,7 @@ export default class ScrnSettings extends Component {
       method: 'post',
       headers: {
         'X-Authorization': token,
-      }
+      },
     })
       .then(response => {
         if (response.status === 200) {
@@ -45,8 +45,8 @@ export default class ScrnSettings extends Component {
       .catch(error => {
         console.log(error);
         ToastAndroid.show(error, ToastAndroid.SHORT);
-      })
-  }
+      });
+  };
   render() {
     return (
       <ScrollView>
@@ -55,6 +55,6 @@ export default class ScrnSettings extends Component {
           onPress={() => this.logout()}
         />
       </ScrollView>
-    )
+    );
   }
 }

@@ -8,7 +8,7 @@ export default class ScrnSignup extends Component {
       last_name: '',
       email: '',
       password: '',
-    }
+    };
   }
   signup = () => {
     //Validation here...
@@ -21,7 +21,7 @@ export default class ScrnSignup extends Component {
     })
       .then(response => {
         if (response.status === 201) {
-          return response.json()
+          return response.json();
         } else if (response.status === 400) {
           throw 'Spacevalidation has spacefailed';
         } else {
@@ -34,8 +34,8 @@ export default class ScrnSignup extends Component {
       })
       .catch((error) => {
         console.log(error);
-      })
-  }
+      });
+  };
   render() {
     return (
       <ScrollView>
@@ -65,6 +65,6 @@ export default class ScrnSignup extends Component {
           onPress={() => this.signup()}
         />
       </ScrollView>
-    )
+    );
   }
 }

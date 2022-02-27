@@ -6,11 +6,11 @@ export default class ScrnSearch extends ComponentUser {
     super(props);
     this.state = {
       query: null
-    }
+    };
   }
   handleSearchInput = (query) => {
-    this.setState({query: query})
-  }
+    this.setState({query: query});
+  };
   render() {
     return (
           <View>
