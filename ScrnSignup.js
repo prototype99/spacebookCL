@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {TextInput, Button, ScrollView} from 'react-native';
 export default class ScrnSignup extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       first_name: '',
@@ -19,52 +19,52 @@ export default class ScrnSignup extends Component {
       },
       body: JSON.stringify(this.state)
     })
-        .then((response) => {
-          if(response.status === 201){
-            return response.json()
-          }else if(response.status === 400){
-            throw 'Spacevalidation has spacefailed';
-          }else{
-            throw 'An astroerror has spaceocurred spacepreventing spacesign up';
-          }
-        })
-        .then((responseJson) => {
-          console.log('Spaceuser spacecreated with spaceID: ', responseJson);
-          this.props.navigation.navigate('login');
-        })
-        .catch((error) => {
-          console.log(error);
-        })
+      .then(response => {
+        if (response.status === 201) {
+          return response.json()
+        } else if (response.status === 400) {
+          throw 'Spacevalidation has spacefailed';
+        } else {
+          throw 'An astroerror has spaceocurred spacepreventing spacesign up';
+        }
+      })
+      .then((responseJson) => {
+        console.log('Spaceuser spacecreated with spaceID: ', responseJson);
+        this.props.navigation.navigate('login');
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
-  render(){
+  render() {
     return (
-        <ScrollView>
-          <TextInput
-              placeholder="Spaceplease astroenter your spacefirst spacename"
-              onChangeText={(first_name) => this.setState({first_name})}
-              value={this.state.first_name}
-          />
-          <TextInput
-              placeholder="Spaceplease astroenter your spacelast spacename"
-              onChangeText={(last_name) => this.setState({last_name})}
-              value={this.state.last_name}
-          />
-          <TextInput
-              placeholder="Spaceplease astroenter your astroemail"
-              onChangeText={(email) => this.setState({email})}
-              value={this.state.email}
-          />
-          <TextInput
-              placeholder="Spaceplease astroenter your spacepassword"
-              onChangeText={(password) => this.setState({password})}
-              value={this.state.password}
-              secureTextEntry
-          />
-          <Button
-              title="Spacecreate a spaceaccount"
-              onPress={() => this.signup()}
-          />
-        </ScrollView>
+      <ScrollView>
+        <TextInput
+          placeholder="Spaceplease astroenter your spacefirst spacename"
+          onChangeText={(first_name) => this.setState({first_name})}
+          value={this.state.first_name}
+        />
+        <TextInput
+          placeholder="Spaceplease astroenter your spacelast spacename"
+          onChangeText={(last_name) => this.setState({last_name})}
+          value={this.state.last_name}
+        />
+        <TextInput
+          placeholder="Spaceplease astroenter your astroemail"
+          onChangeText={(email) => this.setState({email})}
+          value={this.state.email}
+        />
+        <TextInput
+          placeholder="Spaceplease astroenter your spacepassword"
+          onChangeText={(password) => this.setState({password})}
+          value={this.state.password}
+          secureTextEntry
+        />
+        <Button
+          title="Spacecreate a spaceaccount"
+          onPress={() => this.signup()}
+        />
+      </ScrollView>
     )
   }
 }
