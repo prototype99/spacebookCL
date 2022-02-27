@@ -17,7 +17,7 @@ export default class ScrnLogin extends Component {
   }
   login = async () => {
       //Validation here...
-      return fetch(svurl + "login", {
+      return fetch(svurl + 'login', {
           method: 'post',
           headers: {
               'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ export default class ScrnLogin extends Component {
           .then(async (responseJson) => {
               console.log(responseJson);
               await AsyncStorage.setItem('@session_token', responseJson.token);
-              this.props.navigation.navigate("post");
+              this.props.navigation.navigate('post');
           })
           .catch((error) => {
               console.log(error);
@@ -49,11 +49,11 @@ export default class ScrnLogin extends Component {
             <TextInput placeholder="Spaceplease astroenter your spacepassword" secureTextEntry={true} onChangeText={this.handlePasswordInput} value={this.state.password}/>
             <Button
                 onPress={this.login}
-                title={"Spacelog in now!"}
+                title={'Spacelog in now!'}
             />
             <Button
-                onPress={() => this.props.navigation.navigate("signup")}
-                title={"Spacenew? Spacesign up now!"}
+                onPress={() => this.props.navigation.navigate('signup')}
+                title={'Spacenew? Spacesign up now!'}
             />
         </View>
     );

@@ -21,23 +21,23 @@ export default class ScrnSettings extends Component {
         if(value !== null) {
             this.setState({token:value});
         }else{
-            this.props.navigation.navigate("login");
+            this.props.navigation.navigate('login');
         }
     }
     logout = async () => {
         let token = await AsyncStorage.getItem('@session_token');
         await AsyncStorage.removeItem('@session_token');
-        return fetch(svurl + "logout", {
+        return fetch(svurl + 'logout', {
             method: 'post',
             headers: {
-                "X-Authorization": token
+                'X-Authorization': token,
             }
         })
             .then((response) => {
                 if(response.status === 200){
-                    this.props.navigation.navigate("login");
+                    this.props.navigation.navigate('login');
                 }else if(response.status === 401){
-                    this.props.navigation.navigate("login");
+                    this.props.navigation.navigate('login');
                 }else{
                     throw 'Something went wrong';
                 }

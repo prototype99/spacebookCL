@@ -1,14 +1,14 @@
 import React from 'react';
-import {TEST_IP} from "react-native-dotenv";
+import {TEST_IP} from 'react-native-dotenv';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScrnLogin from './ScrnLogin';
-import ScrnPost from "./ScrnPost";
-import ScrnSettings from "./ScrnSettings";
-import ScrnSignup from "./ScrnSignup";
-import ScrnSearch from "./ScrnSearch";
+import ScrnPost from './ScrnPost';
+import ScrnSettings from './ScrnSettings';
+import ScrnSignup from './ScrnSignup';
+import ScrnSearch from './ScrnSearch';
 const Stack = createNativeStackNavigator();
-global.svurl = "http://" + TEST_IP + ":3333/api/1.0.0/";
+global.svurl = 'http://' + TEST_IP + ':3333/api/1.0.0/';
 export default function App() {
     return (
         <NavigationContainer>

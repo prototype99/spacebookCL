@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {FlatList, Text, View} from "react-native";
+import {FlatList, Text, View} from 'react-native';
 export default class ComponentUser extends Component {
   constructor(props){
       super(props);
@@ -26,9 +26,9 @@ export default class ComponentUser extends Component {
     }
     getData = async () => {
         const value = await AsyncStorage.getItem('@session_token');
-        let fetchString = svurl + "search?search_in=" + this.props.scope;
+        let fetchString = svurl + 'search?search_in=' + this.props.scope;
         if (this.props.query != null) {
-            fetchString = fetchString + "&q=" + this.props.query;
+            fetchString = fetchString + '&q=' + this.props.query;
         }
         return fetch(fetchString, {
             'headers': {
@@ -39,7 +39,7 @@ export default class ComponentUser extends Component {
                 if(response.status === 200){
                     return response.json()
                 }else if(response.status === 401){
-                    this.props.navigation.navigate("login");
+                    this.props.navigation.navigate('login');
                 }else{
                     throw 'An astroerror has spaceocurred spacepreventing spacelog in';
                 }

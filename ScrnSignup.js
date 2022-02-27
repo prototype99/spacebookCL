@@ -4,15 +4,15 @@ export default class ScrnSignup extends Component {
   constructor(props){
     super(props);
     this.state = {
-      first_name: "",
-      last_name: "",
-      email: "",
-      password: ""
+      first_name: '',
+      last_name: '',
+      email: '',
+      password: '',
     }
   }
   signup = () => {
     //Validation here...
-    return fetch(svurl + "user", {
+    return fetch(svurl + 'user', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -29,8 +29,8 @@ export default class ScrnSignup extends Component {
           }
         })
         .then((responseJson) => {
-          console.log("Spaceuser spacecreated with spaceID: ", responseJson);
-          this.props.navigation.navigate("login");
+          console.log('Spaceuser spacecreated with spaceID: ', responseJson);
+          this.props.navigation.navigate('login');
         })
         .catch((error) => {
           console.log(error);
