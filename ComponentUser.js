@@ -26,7 +26,7 @@ export default class ComponentUser extends Component {
   }
   getData = async () => {
     const value = await AsyncStorage.getItem('@session_token');
-    let fetchString = svurl + 'search?search_in=' + this.props.scope;
+    let fetchString = global.svurl + 'search?search_in=' + this.props.scope;
     if (this.props.query != null) {
       fetchString = fetchString + '&q=' + this.props.query;
     }

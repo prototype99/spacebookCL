@@ -12,7 +12,7 @@ export default class ScrnSignup extends Component {
   }
   signup = () => {
     //Validation here...
-    return fetch(svurl + 'user', {
+    return fetch(global.svurl + 'user', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'

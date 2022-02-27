@@ -27,7 +27,7 @@ export default class ScrnSettings extends Component {
   logout = async () => {
     let token = await AsyncStorage.getItem('@session_token');
     await AsyncStorage.removeItem('@session_token');
-    return fetch(svurl + 'logout', {
+    return fetch(global.svurl + 'logout', {
       method: 'post',
       headers: {
         'X-Authorization': token,

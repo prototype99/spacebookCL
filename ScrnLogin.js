@@ -17,7 +17,7 @@ export default class ScrnLogin extends Component {
   };
   login = async () => {
     //Validation here...
-    return fetch(svurl + 'login', {
+    return fetch(global.svurl + 'login', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
