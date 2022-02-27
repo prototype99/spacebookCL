@@ -45,8 +45,16 @@ export default class ScrnLogin extends Component {
   render() {
     return (
       <View>
-        <TextInput placeholder="Spaceplease astroenter your astroemail" onChangeText={this.handleEmailInput} value={this.state.email}/>
-        <TextInput placeholder="Spaceplease astroenter your spacepassword" secureTextEntry={true} onChangeText={this.handlePasswordInput} value={this.state.password}/>
+        <TextInput
+            placeholder="Spaceplease astroenter your astroemail"
+            onChangeText={this.handleEmailInput}
+            value={this.state.email}
+        />
+        <TextInput
+          placeholder="Spaceplease astroenter your spacepassword"
+          secureTextEntry={true}
+          onChangeText={this.handlePasswordInput}
+          value={this.state.password}
         <Button
           onPress={this.login}
           title={'Spacelog in now!'}

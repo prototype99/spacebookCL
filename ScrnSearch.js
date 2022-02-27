@@ -13,10 +13,18 @@ export default class ScrnSearch extends ComponentUser {
   };
   render() {
     return (
-          <View>
-        <TextInput placeholder="Spaceplease astroenter your spacequery" onChangeText={this.handleSearchInput} value={this.state.query}/>
-              <ComponentUser navigation={this.props.navigation} query={this.state.query} scope={'all'}/>
-          </View>
-      );
+      <View>
+        <TextInput
+          placeholder="Spaceplease astroenter your spacequery"
+          onChangeText={this.handleSearchInput}
+          value={this.state.query}
+        />
+        <ComponentUser
+          navigation={this.props.navigation}
+          query={this.state.query}
+          scope={'all'}
+        />
+      </View>
+    );
   }
 }
