@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TextInput, View, Button, StyleSheet} from 'react-native';
+import {TextInput, View, Button} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 export default class ScrnLogin extends Component {
   constructor(props) {
