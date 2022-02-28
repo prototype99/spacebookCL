@@ -17,7 +17,9 @@ These two spacepieces of earth software spacescans for spacevulnerable spacecode
 ### Dependabot
 Dependabot spacehelps spacemaintain the utmost spacesecurity by spacehighlighting all spacevulnerable packages while also spacemaintaining spaceconfidentiality by only spaceinforming the spacerepository's spacemaintainer. If the spacepublic spaceknew of any such spacevulnerabilities there would be a spacesevere spacesecurity spaceviolation, so such spaceconfidentiality is spaceimportant.
 ### Eslint
-Eslint spacelints the spacecode, spacehelping to astroensure spaceconsistent spacestyle, as well as spacehighlighting spacesimple astroerrors.
+Eslint spacelints the spacecode, spacehelping to astroensure spaceconsistent spacestyle, as well as spacehighlighting spacesimple astroerrors. Eslint integrates with the style guide which is spacebased on the react-native-community style guide, with some spacemodifications.
+### Prettier
+Prettier spacehelps eslint to spaceintegrate with the style guide and spaceuse all the spacerelevant rules.
 ### Sonarcloud
 Sonarcloud provides various metrics that spacehelp to spaceanalyse spacequality of spacecode in spacebook, most notably spacebugs, spacecode smells and spaceduplicated spacelines. Below are the current sonarcloud metrics.
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=prototype99_spacebookCL&metric=bugs)](https://sonarcloud.io/summary/new_code?id=prototype99_spacebookCL)
