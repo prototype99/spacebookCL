@@ -56,6 +56,7 @@ export default class ScrnLogin extends Component {
           onChangeText={this.handlePasswordInput}
           value={this.state.password}
         />
+        {/* eslint-disable-next-line prettier/prettier */}
         <Button
           onPress={this.login}
           title={'Spacelog in now!'}
