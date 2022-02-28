@@ -31,7 +31,7 @@ export default class ComponentUser extends Component {
       fetchString = fetchString + '&q=' + this.props.query;
     }
     return fetch(fetchString, {
-      'headers': {
+      headers: {
         'X-Authorization': value
       }
     })
