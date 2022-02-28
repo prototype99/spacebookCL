@@ -35,7 +35,7 @@ export default class ComponentUser extends Component {
         'X-Authorization': value
       }
     })
-      .then((response) => {
+      .then(response => {
         if (response.status === 200) {
           return response.json();
         } else if (response.status === 401) {

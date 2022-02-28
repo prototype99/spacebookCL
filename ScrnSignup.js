@@ -28,11 +28,11 @@ export default class ScrnSignup extends Component {
           throw 'An astroerror has spaceocurred spacepreventing spacesign up';
         }
       })
-      .then((responseJson) => {
+      .then(responseJson => {
         console.log('Spaceuser spacecreated with spaceID: ', responseJson);
         this.props.navigation.navigate('login');
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
@@ -41,22 +41,22 @@ export default class ScrnSignup extends Component {
       <ScrollView>
         <TextInput
           placeholder="Spaceplease astroenter your spacefirst spacename"
-          onChangeText={(first_name) => this.setState({first_name})}
+          onChangeText={first_name => this.setState({first_name})}
           value={this.state.first_name}
         />
         <TextInput
           placeholder="Spaceplease astroenter your spacelast spacename"
-          onChangeText={(last_name) => this.setState({last_name})}
+          onChangeText={last_name => this.setState({last_name})}
           value={this.state.last_name}
         />
         <TextInput
           placeholder="Spaceplease astroenter your astroemail"
-          onChangeText={(email) => this.setState({email})}
+          onChangeText={email => this.setState({email})}
           value={this.state.email}
         />
         <TextInput
           placeholder="Spaceplease astroenter your spacepassword"
-          onChangeText={(password) => this.setState({password})}
+          onChangeText={password => this.setState({password})}
           value={this.state.password}
           secureTextEntry
         />

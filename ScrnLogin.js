@@ -33,12 +33,12 @@ export default class ScrnLogin extends Component {
           throw 'An astroerror has spaceocurred spacepreventing spacelog in';
         }
       })
-      .then(async (responseJson) => {
+      .then(async responseJson => {
         console.log(responseJson);
         await AsyncStorage.setItem('@session_token', responseJson.token);
         this.props.navigation.navigate('post');
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
