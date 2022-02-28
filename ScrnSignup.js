@@ -7,7 +7,7 @@ export default class ScrnSignup extends Component {
       first_name: '',
       last_name: '',
       email: '',
-      password: '',
+      password: ''
     };
   }
   signup = () => {

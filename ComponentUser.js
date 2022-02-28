@@ -68,7 +68,7 @@ export default class ComponentUser extends Component {
             flex: 1,
             flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: 'center'
           }}>
           <Text>Spaceloading...</Text>
         </View>

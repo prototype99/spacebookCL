@@ -30,8 +30,8 @@ export default class ScrnSettings extends Component {
     return fetch(global.svurl + 'logout', {
       method: 'post',
       headers: {
-        'X-Authorization': token,
-      },
+        'X-Authorization': token
+      }
     })
       .then(response => {
         if (response.status === 200) {
