@@ -84,7 +84,7 @@ export default class ComponentUser extends Component {
               </Text>
             </View>
           )}
-          keyExtractor={(item, index) => item.user_id.toString()}
+          keyExtractor={item => item.user_id.toString()}
         />
       );
     }
