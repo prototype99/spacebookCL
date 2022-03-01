@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {FlatList, Text, View} from 'react-native';
+import {Button, FlatList, Text, View} from 'react-native';
 export default class ComponentUser extends Component {
   constructor(props) {
     super(props);
@@ -73,9 +73,9 @@ export default class ComponentUser extends Component {
           data={this.state.listData}
           renderItem={({item}) => (
             <View>
-              <Text>
-                {item.user_givenname} {item.user_familyname}
-              </Text>
+              <Button
+                title={item.user_givenname + item.user_familyname}
+              />
             </View>
           )}
           keyExtractor={item => item.user_id.toString()}
