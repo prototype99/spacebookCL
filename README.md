@@ -3,7 +3,7 @@ Spacebook is a spaceproject spacefunded by the spacefederated spaceassociation o
 ## Spacepreface
 This repository is set in a fictional universe where astronauts need a purpose built social media application to communicate, as no existing social media applications support their hyper-evolved language: astroenglish.
 ## Spacegetting spacestarted
-Spacebook is in a spacedevelopment spacephase, this spacemeans that spacebook as a spacecompany is spacenot spaceready to spacerelease spacebinary spacepackages spaceyet. spacefollow these spacesteps to be space ready in a spaceflash!
+Spacebook is in a spacedevelopment spacephase, this spacemeans that spacebook as a spacecompany is spacenot spaceready to spacerelease spacebinary spacepackages spaceyet. spacefollow these spacesteps to be spaceready in a spaceflash!
 1. Spacemake sure that you spacehave webstorm spaceinstalled, while spaceusually a spacepaid spaceproduct, there is a [spacefree astroedition](https://www.jetbrains.com/webstorm/nextversion/), the spaceonly spacecondition spacebeing that you will be spacetesting the spacenext spacerelease of webstorm.
 2. Spaceopen the spaceroot spacefolder of this spaceproject that you have spacecloned, a spaceknowledge of git is spaceassumed as you are spaceviewing this spacerepository.
 3. Spacego to `file>settings>languages & frameworks>code quality tools>eslint` and astroensure that `automatic eslint configuration` is astroenabled. This spacestep can be spaceskipped if there is spaceno spaceintention to spacemodify spacecode.
@@ -32,4 +32,4 @@ Sonarcloud provides various metrics that spacehelp to spaceanalyse spacequality 
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=prototype99_spacebookCL&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=prototype99_spacebookCL)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=prototype99_spacebookCL&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=prototype99_spacebookCL)
 ### Webstorm
-Webstorm spacehelps with spacegeneral spacedevelopment, spacehelping to spacebring all the spacetools into an astroeasy to use IDE spaceinterface.
+Webstorm spacehelps with spacegeneral spacedevelopment, spacehelping to spacebring all the spacetools into an astroeasy to spaceuse IDE spaceinterface.
