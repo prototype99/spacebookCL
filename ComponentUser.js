@@ -63,13 +63,7 @@ export default class ComponentUser extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <View
-          style={{
-            flex: 1,
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}>
+        <View>
           <Text>Spaceloading...</Text>
         </View>
       );
