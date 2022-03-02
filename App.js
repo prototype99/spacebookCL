@@ -12,8 +12,8 @@ const Stack = createNativeStackNavigator();
 global.svurl = 'http://' + TEST_IP + ':3333/api/1.0.0/';
 export default function App() {
   return (
-    <NavigationContainer>
-      <NativeBaseProvider>
+    <NativeBaseProvider>
+      <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
             name="post"
@@ -51,7 +51,7 @@ export default function App() {
             }}
           />
         </Stack.Navigator>
-      </NativeBaseProvider>
-    </NavigationContainer>
+      </NavigationContainer>
+    </NativeBaseProvider>
   );
 }
