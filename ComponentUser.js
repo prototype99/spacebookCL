@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button, FlatList, Text, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
+import {Button} from 'native-base';
 export default class ComponentUser extends Component {
   constructor(props) {
     super(props);

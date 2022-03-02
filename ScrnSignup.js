@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {TextInput, Button, ScrollView} from 'react-native';
+import {TextInput, ScrollView} from 'react-native';
+import {Button} from 'native-base';
 export default class ScrnSignup extends Component {
   constructor(props) {
     super(props);
