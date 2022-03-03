@@ -73,7 +73,7 @@ export default class ScrnSignup extends Component {
           value={this.state.password}
         />
         <Button onPress={() => this.signup()}>
-          title="Spacecreate a spaceaccount"
+          Spacecreate a spaceaccount
         </Button>
       </ScrollView>
     );
