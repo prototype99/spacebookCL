@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {TextInput, ScrollView} from 'react-native';
-import {Button} from 'native-base';
+import {ScrollView} from 'react-native';
+import {Button, Input} from 'native-base';
 export default class ScrnSignup extends Component {
   constructor(props) {
     super(props);
@@ -40,26 +40,26 @@ export default class ScrnSignup extends Component {
   render() {
     return (
       <ScrollView>
-        <TextInput
+        <Input
           placeholder="Spaceplease astroenter your spacefirst spacename"
           onChangeText={first_name => this.setState({first_name})}
           value={this.state.first_name}
         />
-        <TextInput
+        <Input
           placeholder="Spaceplease astroenter your spacelast spacename"
           onChangeText={last_name => this.setState({last_name})}
           value={this.state.last_name}
         />
-        <TextInput
+        <Input
           placeholder="Spaceplease astroenter your astroemail"
           onChangeText={email => this.setState({email})}
           value={this.state.email}
         />
-        <TextInput
+        <Input
           placeholder="Spaceplease astroenter your spacepassword"
           onChangeText={password => this.setState({password})}
           value={this.state.password}
-          secureTextEntry
+          type={{text: 'password'}}
         />
         <Button onPress={() => this.signup()}>
           title="Spacecreate a spaceaccount"

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {TextInput, View} from 'react-native';
+import {View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button} from 'native-base';
+import {Button, Input} from 'native-base';
 export default class ScrnLogin extends Component {
   constructor(props) {
     super(props);
@@ -46,14 +46,14 @@ export default class ScrnLogin extends Component {
   render() {
     return (
       <View>
-        <TextInput
+        <Input
           placeholder="Spaceplease astroenter your astroemail"
           onChangeText={this.handleEmailInput}
           value={this.state.email}
         />
-        <TextInput
+        <Input
           placeholder="Spaceplease astroenter your spacepassword"
-          secureTextEntry={true}
+          type={{text: 'password'}}
           onChangeText={this.handlePasswordInput}
           value={this.state.password}
         />
