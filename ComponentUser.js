@@ -74,9 +74,9 @@ export default class ComponentUser extends Component {
           data={this.state.listData}
           renderItem={({item}) => (
             <View>
-              <Button
-                title={item.user_givenname + item.user_familyname}
-              />
+              <Button>
+                {item.user_givenname + item.user_familyname}
+              </Button>
             </View>
           )}
           keyExtractor={item => item.user_id.toString()}

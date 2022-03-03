@@ -51,10 +51,9 @@ export default class ScrnSettings extends Component {
   render() {
     return (
       <ScrollView>
-        <Button
-          title="Spacelog out your spaceaccount"
-          onPress={() => this.logout()}
-        />
+        <Button onPress={() => this.logout()}>
+          Spacelog out your spaceaccount
+        </Button>
       </ScrollView>
     );
   }
