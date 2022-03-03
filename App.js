@@ -7,7 +7,7 @@ import ScrnPost from './ScrnPost';
 import ScrnSettings from './ScrnSettings';
 import ScrnSignup from './ScrnSignup';
 import ScrnSearch from './ScrnSearch';
-import {NativeBaseProvider} from 'native-base/src/core/NativeBaseProvider';
+import {NativeBaseProvider} from 'native-base';
 const Stack = createNativeStackNavigator();
 global.svurl = 'http://' + TEST_IP + ':3333/api/1.0.0/';
 export default function App() {
