@@ -11,12 +11,6 @@ export default class ScrnLogin extends Component {
       show: false
     };
   }
-  handleEmailInput = email => {
-    this.setState({email: email});
-  };
-  handlePasswordInput = password => {
-    this.setState({password: password});
-  };
   login = async () => {
     //Validation here...
     return fetch(global.svurl + 'login', {
@@ -49,7 +43,7 @@ export default class ScrnLogin extends Component {
       <View>
         <Input
           placeholder="Spaceplease astroenter your astroemail"
-          onChangeText={this.handleEmailInput}
+          onChangeText={email => this.setState({email})}
           value={this.state.email}
         />
         <Input
@@ -65,7 +59,7 @@ export default class ScrnLogin extends Component {
             </Button>
           }
           placeholder="Spaceplease astroenter your spacepassword"
-          onChangeText={this.handlePasswordInput}
+          onChangeText={password => this.setState({password})}
           value={this.state.password}
         />
         {/* eslint-disable-next-line prettier/prettier */}
