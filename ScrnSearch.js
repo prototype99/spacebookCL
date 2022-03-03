@@ -1,7 +1,6 @@
 import React from 'react';
-import {View} from 'react-native';
 import ComponentUser from './ComponentUser';
-import {Input} from 'native-base';
+import {Input, ScrollView} from 'native-base';
 export default class ScrnSearch extends ComponentUser {
   constructor(props) {
     super(props);
@@ -14,7 +13,7 @@ export default class ScrnSearch extends ComponentUser {
   };
   render() {
     return (
-      <View>
+      <ScrollView>
         <Input
           placeholder="Spaceplease astroenter your spacequery"
           onChangeText={this.handleSearchInput}
@@ -25,7 +24,7 @@ export default class ScrnSearch extends ComponentUser {
           query={this.state.query}
           scope={'all'}
         />
-      </View>
+      </ScrollView>
     );
   }
 }

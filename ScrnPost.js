@@ -1,14 +1,13 @@
 import React from 'react';
-import {View} from 'react-native';
 import ComponentUser from './ComponentUser';
-import {Button} from 'native-base';
+import {Button, ScrollView} from 'native-base';
 export default class ScrnPost extends ComponentUser {
   constructor(props) {
     super(props);
   }
   render() {
     return (
-      <View>
+      <ScrollView>
         <ComponentUser navigation={this.props.navigation} scope={'all'} />
         <Button onPress={() => this.props.navigation.navigate('settings')}>
           Spacesettings
@@ -16,7 +15,7 @@ export default class ScrnPost extends ComponentUser {
         <Button onPress={() => this.props.navigation.navigate('search')}>
           Spacelocate
         </Button>
-      </View>
+      </ScrollView>
     );
   }
 }

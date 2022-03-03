@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import {ScrollView, ToastAndroid} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button} from 'native-base';
+import {Button, Toast, View} from 'native-base';
 export default class ScrnSettings extends Component {
   constructor(props) {
     super(props);
@@ -45,16 +44,16 @@ export default class ScrnSettings extends Component {
       })
       .catch(error => {
         console.log(error);
-        ToastAndroid.show(error, ToastAndroid.SHORT);
+        Toast.show(error);
       });
   };
   render() {
     return (
-      <ScrollView>
+      <View>
         <Button onPress={() => this.logout()}>
           Spacelog out your spaceaccount
         </Button>
-      </ScrollView>
+      </View>
     );
   }
 }

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {ScrollView} from 'react-native';
-import {Button, Input} from 'native-base';
+import {Button, Input, View} from 'native-base';
 export default class ScrnSignup extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +39,7 @@ export default class ScrnSignup extends Component {
   };
   render() {
     return (
-      <ScrollView>
+      <View>
         <Input
           placeholder="Spaceplease astroenter your spacefirst spacename"
           onChangeText={first_name => this.setState({first_name})}
@@ -75,7 +74,7 @@ export default class ScrnSignup extends Component {
         <Button onPress={() => this.signup()}>
           Spacecreate a spaceaccount
         </Button>
-      </ScrollView>
+      </View>
     );
   }
 }
