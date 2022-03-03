@@ -75,7 +75,7 @@ export default class ComponentUser extends Component {
           renderItem={({item}) => (
             <View>
               <Button>
-                {item.user_givenname + item.user_familyname}
+                {item.user_givenname + ' ' + item.user_familyname}
               </Button>
             </View>
           )}
