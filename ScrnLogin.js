@@ -69,7 +69,7 @@ export default class ScrnLogin extends Component {
           value={this.state.password}
         />
         {/* eslint-disable-next-line prettier/prettier */}
-        <Button onPress={() => this.login}>
+        <Button onPress={this.login}>
           Spacelog in now!
         </Button>
         <Button onPress={() => this.props.navigation.navigate('signup')}>
