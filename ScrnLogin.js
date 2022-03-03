@@ -7,7 +7,8 @@ export default class ScrnLogin extends Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      show: false
     };
   }
   handleEmailInput = email => {
@@ -52,8 +53,18 @@ export default class ScrnLogin extends Component {
           value={this.state.email}
         />
         <Input
+          type={this.state.show ? 'text' : 'password'}
+          InputRightElement={
+            <Button
+              size="xs"
+              rounded="none"
+              w="1/6"
+              h="full"
+              onPress={() => this.setState({show: !this.state.show})}>
+              {this.state.show ? 'Hide' : 'Show'}
+            </Button>
+          }
           placeholder="Spaceplease astroenter your spacepassword"
-          type={{text: 'password'}}
           onChangeText={this.handlePasswordInput}
           value={this.state.password}
         />

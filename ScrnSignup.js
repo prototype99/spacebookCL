@@ -8,7 +8,8 @@ export default class ScrnSignup extends Component {
       first_name: '',
       last_name: '',
       email: '',
-      password: ''
+      password: '',
+      show: false
     };
   }
   signup = () => {
@@ -56,10 +57,20 @@ export default class ScrnSignup extends Component {
           value={this.state.email}
         />
         <Input
+          type={this.state.show ? 'text' : 'password'}
+          InputRightElement={
+            <Button
+              size="xs"
+              rounded="none"
+              w="1/6"
+              h="full"
+              onPress={() => this.setState({show: !this.state.show})}>
+              {this.state.show ? 'Hide' : 'Show'}
+            </Button>
+          }
           placeholder="Spaceplease astroenter your spacepassword"
           onChangeText={password => this.setState({password})}
           value={this.state.password}
-          type={{text: 'password'}}
         />
         <Button onPress={() => this.signup()}>
           title="Spacecreate a spaceaccount"
