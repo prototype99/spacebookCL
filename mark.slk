@@ -396,13 +396,13 @@ C;X8;K20
 C;X10;K"weight"
 C;X11;K10
 C;X13;K"total"
-C;X14;K26.6;Esum((R[23]C[-12]*(RC[-12]/100)),(R[3]C[-9]*(RC[-9]/100)),(R[5]C[-6]*(RC[-6]/100)),(R[4]C[-3]*(RC[-3]/100)))
+C;X14;K40.6;Esum((R[23]C[-12]*(RC[-12]/100)),(R[3]C[-9]*(RC[-9]/100)),(R[5]C[-6]*(RC[-6]/100)),(R[4]C[-3]*(RC[-3]/100)))
 C;Y3;X1;K"add user"
 C;X2;K1
 C;X4;K"drafts"
 C;X5;K0
 C;X7;K"consistent style"
-C;X8;K0
+C;X8;K1
 C;X10;K"repo"
 C;X11;K1
 C;Y4;X1;K"log in"
@@ -418,19 +418,19 @@ C;X2;K1
 C;X4;K"mark"
 C;X5;K0;E20*sum(R[-2]C:R[-1]C)
 C;X7;K"style framework"
-C;X8;K0
+C;X8;K1
 C;X10;K"linter"
 C;X11;K1
 C;Y6;X1;K"get user info"
 C;X2;K0
 C;X7;K"accessibility"
-C;X8;K0
+C;X8;K1
 C;X10;K"mark"
 C;X11;K86;Eifs(sum(R[-3]C:R[-1]C)=3,86,and(R[-3]C=1,R[-2]C=1),60,R[-3]C=1,30)
 C;Y7;X1;K"edit user info"
 C;X2;K0
 C;X7;K"mark"
-C;X8;K0;Eifs(or(R[-4]C=0,R[-3]C=0),0,sum(R[-4]C:R[-1]C)=4,70,and(R[-4]C=1,R[-3]C=1,R[-2]C=1),60,and(R[-4]C=1,R[-3]C=1),50)
+C;X8;K70;Eifs(or(R[-4]C=0,R[-3]C=0),0,sum(R[-4]C:R[-1]C)=4,70,and(R[-4]C=1,R[-3]C=1,R[-2]C=1),60,and(R[-4]C=1,R[-3]C=1),50)
 C;Y8;X1;K"get user photo"
 C;X2;K0
 C;Y9;X1;K"update user photo"
