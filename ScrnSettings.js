@@ -50,6 +50,7 @@ export default class ScrnSettings extends Component {
   render() {
     return (
       <View>
+        {/* eslint-disable-next-line prettier/prettier */}
         <Button onPress={() => this.logout()}>
           Spacelog out your spaceaccount
         </Button>

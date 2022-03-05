@@ -73,6 +73,7 @@ export default class ComponentUser extends Component {
           data={this.state.listData}
           renderItem={({item}) => (
             <View>
+              {/* eslint-disable-next-line prettier/prettier */}
               <Button>
                 {item.user_givenname + ' ' + item.user_familyname}
               </Button>
