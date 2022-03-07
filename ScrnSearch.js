@@ -1,7 +1,7 @@
 import React from 'react';
-import ComponentUser from './ComponentUser';
+import UserList from './UserList';
 import {Input, ScrollView} from 'native-base';
-export default class ScrnSearch extends ComponentUser {
+export default class ScrnSearch extends UserList {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ export default class ScrnSearch extends ComponentUser {
           onChangeText={query => this.setState({query: query})}
           value={this.state.query}
         />
-        <ComponentUser
+        <UserList
           navigation={this.props.navigation}
           query={this.state.query}
           scope={'all'}

@@ -1,14 +1,14 @@
 import React from 'react';
-import ComponentUser from './ComponentUser';
+import UserList from './UserList';
 import {Button, ScrollView} from 'native-base';
-export default class ScrnPost extends ComponentUser {
+export default class ScrnPost extends UserList {
   constructor(props) {
     super(props);
   }
   render() {
     return (
       <ScrollView>
-        <ComponentUser navigation={this.props.navigation} scope={'all'} />
+        <UserList navigation={this.props.navigation} scope={'all'} />
         <Button onPress={() => this.props.navigation.navigate('settings')}>
           Spacesettings
         </Button>
