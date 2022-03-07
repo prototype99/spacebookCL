@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button, FlatList, Text, View} from 'native-base';
+import {Button, FlatList, Spinner, View} from 'native-base';
 export default class UserList extends Component {
   constructor(props) {
     super(props);
@@ -64,7 +64,7 @@ export default class UserList extends Component {
     if (this.state.isLoading) {
       return (
         <View>
-          <Text>Spaceloading...</Text>
+          <Spinner />
         </View>
       );
     } else {
