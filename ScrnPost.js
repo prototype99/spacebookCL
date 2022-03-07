@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import UserList from './UserList';
 import {Button, ScrollView} from 'native-base';
-export default class ScrnPost extends UserList {
+export default class ScrnPost extends Component {
   constructor(props) {
     super(props);
   }
