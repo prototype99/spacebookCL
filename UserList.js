@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button, FlatList, Text, View} from 'native-base';
+import {Button, FlatList, View} from 'native-base';
+import Loader from './Loader';
 export default class UserList extends Component {
   constructor(props) {
     super(props);
@@ -61,14 +62,8 @@ export default class UserList extends Component {
     }
   };
   render() {
-    if (this.state.isLoading) {
-      return (
-        <View>
-          <Text>Spaceloading...</Text>
-        </View>
-      );
-    } else {
-      return (
+    return (
+      <Loader>
         <FlatList
           data={this.state.listData}
           renderItem={({item}) => (
@@ -81,7 +76,7 @@ export default class UserList extends Component {
           )}
           keyExtractor={item => item.user_id.toString()}
         />
-      );
-    }
+      </Loader>
+    );
   }
 }

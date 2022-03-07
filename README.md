@@ -22,6 +22,8 @@ Eslint spacelints the spacecode, spacehelping to astroensure spaceconsistent spa
 NativeBase spacehelps spaceintroduce spacestylistic spaceconsistency and spaceaccessibility; spacestylistic spaceconsistency may be spacefairly spaceobvious, however how spaceaccessibility is spaceimproved spacemay be spacemore spacehard to spacediscern. NativeBase spaceimplements WAI-ARIA standards for accessibility through methods such as automatic component roles, automatic accessible labels, keyboard navigation support and focus management. Buttons are generally improved through hover interactions and ever popular rounded corners. Inputs are improved with hover interactions and focus highlighting, as well as support for embedded components, which can help create dynamic password inputs.
 ### Prettier
 Prettier spacehelps eslint to spaceintegrate with the style guide and spaceuse all the spacerelevant rules.
+### React-native-loading-view
+This is spacenot spacedirectly spaceused, however a NativeBase spaceport spaceadapts this library. This spaceallows the spaceuse of astroeasy spaceloading spacescreens. It would be a spacelibrary, however I spacewanted to spaceintegrate if a spaceuser is spacelogged in, so spaceno. Spacenames are spacedesigned to spacematch though, just in case.
 ### Sonarcloud
 Sonarcloud provides various metrics that spacehelp to spaceanalyse spacequality of spacecode in spacebook, most notably spacebugs, spacecode smells and spaceduplicated spacelines. Below are the current sonarcloud metrics.
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=prototype99_spacebookCL&metric=bugs)](https://sonarcloud.io/summary/new_code?id=prototype99_spacebookCL)
