@@ -62,11 +62,7 @@ export default class UserList extends Component {
   };
   render() {
     if (this.state.isLoading) {
-      return (
-        <View>
-          <Spinner />
-        </View>
-      );
+      return <Spinner />;
     } else {
       return (
         <FlatList
