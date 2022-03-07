@@ -1,0 +1,24 @@
+import React, {Component} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+export default class Gate extends Component {
+  constructor(props) {
+    super(props);
+  }
+  checkLoggedIn = async () => {
+    const value = await AsyncStorage.getItem('@session_token');
+    if (value == null) {
+      this.props.navigation.navigate('login');
+    }
+  };
+  componentDidMount() {
+    this.unsubscribe = this.props.navigation.addListener('focus', () => {
+      this.checkLoggedIn();
+    });
+  }
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+  render() {
+    return this.props.children;
+  }
+}

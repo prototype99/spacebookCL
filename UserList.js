@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button, FlatList, Spinner, View} from 'native-base';
-export default class UserList extends Component {
+import Gate from './Gate';
+export default class UserList extends Gate {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,18 +11,13 @@ export default class UserList extends Component {
     };
   }
   componentDidMount() {
-    this.unsubscribe = this.props.navigation.addListener('focus', () => {
-      this.checkLoggedIn();
-    });
+    super.componentDidMount();
     this.getData();
   }
   componentDidUpdate(prevProps) {
     if (prevProps.query !== this.props.query) {
       this.getData();
     }
-  }
-  componentWillUnmount() {
-    this.unsubscribe();
   }
   getData = async () => {
     const value = await AsyncStorage.getItem('@session_token');
@@ -52,12 +48,6 @@ export default class UserList extends Component {
       .catch(error => {
         console.log(error);
       });
-  };
-  checkLoggedIn = async () => {
-    const value = await AsyncStorage.getItem('@session_token');
-    if (value == null) {
-      this.props.navigation.navigate('login');
-    }
   };
   render() {
     if (this.state.isLoading) {
