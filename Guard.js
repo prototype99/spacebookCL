@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button, Input, View} from 'native-base';
-export default class Warden extends Component {
+export default class Guard extends Component {
   constructor(props) {
     super(props);
     this.state = {

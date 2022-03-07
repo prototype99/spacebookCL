@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button, View} from 'native-base';
-import Warden from './Warden';
+import Guard from './Guard';
 export default class ScrnLogin extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +8,7 @@ export default class ScrnLogin extends Component {
   render() {
     return (
       <View>
-        <Warden
+        <Guard
           buttonText="log in now!"
           endPoint="login"
           error400="Invalid astroemail or spacepassword"

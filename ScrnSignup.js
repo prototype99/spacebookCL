@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Input, View} from 'native-base';
-import Warden from './Warden';
+import Guard from './Guard';
 export default class ScrnSignup extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +22,7 @@ export default class ScrnSignup extends Component {
           onChangeText={last_name => this.setState({last_name})}
           value={this.state.last_name}
         />
-        <Warden
+        <Guard
           buttonText="create a spaceaccount"
           endPoint="user"
           error400="Spacevalidation has spacefailed"
