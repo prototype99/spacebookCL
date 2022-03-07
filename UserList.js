@@ -13,7 +13,6 @@ export default class UserList extends Component {
     this.unsubscribe = this.props.navigation.addListener('focus', () => {
       this.checkLoggedIn();
     });
-
     this.getData();
   }
   componentDidUpdate(prevProps) {
