@@ -41,8 +41,12 @@ export default class UserList extends Gate {
           data={this.state.listData}
           renderItem={({item}) => (
             <View>
-              {/* eslint-disable-next-line prettier/prettier */}
-              <Button>
+              <Button
+                onPress={() =>
+                  this.props.navigation.navigate('user', {
+                    user_id: item.user_id
+                  })
+                }>
                 {item.user_givenname + ' ' + item.user_familyname}
               </Button>
             </View>

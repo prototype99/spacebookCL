@@ -6,17 +6,29 @@ import {useToast} from 'native-base';
 export default class Spice extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      spaceUserInfo: ''
+    };
   }
   async spaceFetch(doAuth, doPost, endPoint, error500, spaceBody) {
     let spaceHeaders;
+    let userFetch = false;
+    const contentType = {
+      'Content-Type': 'application/json'
+    };
     if (doAuth) {
       spaceHeaders = {
         'X-Authorization': await AsyncStorage.getItem('@session_token')
       };
+      if (endPoint.includes('user')) {
+        userFetch = true;
+        spaceHeaders = {
+          ...spaceHeaders,
+          ...contentType
+        };
+      }
     } else {
-      spaceHeaders = {
-        'Content-Type': 'application/json'
-      };
+      spaceHeaders = contentType;
     }
     let spaceOptions = {
       headers: {
@@ -72,13 +84,18 @@ export default class Spice extends Component {
         } else if (endPoint === 'user') {
           nextPage = 'login';
         }
-        if (doAuth && !doPost) {
+        if (endPoint.includes('search')) {
           this.setState({
             isLoading: false,
             listData: response
           });
         } else if (nextPage != null) {
           this.props.navigation.navigate(nextPage);
+        }
+        if (userFetch) {
+          this.setState({
+            spaceUserInfo: response
+          });
         }
       })
       .catch(error => {

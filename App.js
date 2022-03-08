@@ -7,6 +7,7 @@ import ScrnSettings from './ScrnSettings';
 import ScrnSignup from './ScrnSignup';
 import ScrnSearch from './ScrnSearch';
 import {NativeBaseProvider} from 'native-base';
+import ScrnUser from './ScrnUser';
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -46,6 +47,13 @@ export default function App() {
             component={ScrnSignup}
             options={{
               title: 'Your spacejourney spacebegins!'
+            }}
+          />
+          <Stack.Screen
+            name="user"
+            component={ScrnUser}
+            options={{
+              title: 'Spaceview spaceuser spaceinformation'
             }}
           />
         </Stack.Navigator>
