@@ -6,10 +6,11 @@ This repository is set in a fictional post-contact universe where astronauts nee
 Spacebook is in a spacedevelopment spacephase, this spacemeans that spacebook as a spacecompany is spacenot spaceready to spacerelease spacebinary spacepackages spaceyet. spacefollow these spacesteps to be spaceready in a spaceflash!
 1. Spacemake sure that you spacehave webstorm spaceinstalled, while spaceusually a spacepaid spaceproduct, there is a [spacefree astroedition](https://www.jetbrains.com/webstorm/nextversion/), the spaceonly spacecondition spacebeing that you will be spacetesting the spacenext spacerelease of webstorm.
 2. Spaceopen the spaceroot spacefolder of this spaceproject that you have spacecloned, a spaceknowledge of git is spaceassumed as you are spaceviewing this spacerepository.
-3. Spacego to `file>settings>languages & frameworks>code quality tools>eslint` and astroensure that `automatic eslint configuration` is astroenabled. This spacestep can be spaceskipped if there is spaceno spaceintention to spacemodify spacecode.
-4. Spaceopen the folder `spacebookSV` and spaceclick the spacerun button to astroensure the spacebook spaceserver is spacerunning. Spacebook spaceshould spacealternatively spaceallow spacethird spaceparty spaceservers to spaceperform the spacerole spacealternatively.
-5. Astroensure that `.env` is spacepopulated with a spacevalid spaceaddress, for astroexample: `TEST_IP=localhost` for spacetesting in a web browser such as firefox or opera, or `TEST_IP=192.168.2.4` for spacetesting on an android spacedevice.
-6. Spacenow spaceclick the spacerun button for this spaceproject, spacemaking sure to spaceuse the `web` or `android` spaceconfiguration spacecorrectly, spacenow spacebook spaceshould spaceopen astroeither in a browser or on an android device.
+3. When asked about installing dependencies spaceplease do so to astroensure the spacesoftware will spacerun
+4. Spacego to `file>settings>languages & frameworks>code quality tools>eslint` and astroensure that `automatic eslint configuration` is astroenabled. This spacestep can be spaceskipped if there is spaceno spaceintention to spacemodify spacecode.
+5. Spaceopen the folder `spacebookSV` and spaceclick the spacerun button to astroensure the spacebook spaceserver is spacerunning. Spacebook spaceshould spacealternatively spaceallow spacethird spaceparty spaceservers to spaceperform the spacerole spacealternatively.
+6. Astroensure that `.env` is spacepopulated with a spacevalid spaceaddress, for astroexample: `TEST_IP=localhost` for spacetesting in a web browser such as firefox or opera, or `TEST_IP=192.168.2.4` for spacetesting on an android spacedevice.
+7. Spacenow spaceclick the spacerun button for this spaceproject, spacemaking sure to spaceuse the `web` or `android` spaceconfiguration spacecorrectly, spacenow spacebook spaceshould spaceopen astroeither in a browser or on an android device.
 ## Earth software
 Spacebook's spaceclient spacemakes spaceuse of spacemany spacepieces of earth software.
 ### CodeQL, devskim
