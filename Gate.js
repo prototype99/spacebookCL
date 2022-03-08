@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-export default class Gate extends Component {
+import Spice from './Spice';
+export default class Gate extends Spice {
   constructor(props) {
     super(props);
   }

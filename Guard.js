@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button, Input, View} from 'native-base';
-export default class Guard extends Component {
+import Spice from './Spice';
+export default class Guard extends Spice {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +14,7 @@ export default class Guard extends Component {
   }
   handleUser = () => {
     //Validation here...
-    return fetch(global.svurl + this.props.endPoint, {
+    return fetch(this.state.svurl + this.props.endPoint, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'

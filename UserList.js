@@ -6,6 +6,7 @@ export default class UserList extends Gate {
   constructor(props) {
     super(props);
     this.state = {
+      ...this.state,
       isLoading: true,
       listData: []
     };
@@ -21,7 +22,7 @@ export default class UserList extends Gate {
   }
   getData = async () => {
     const value = await AsyncStorage.getItem('@session_token');
-    let fetchString = global.svurl + 'search?search_in=' + this.props.scope;
+    let fetchString = this.state.svurl + 'search?search_in=' + this.props.scope;
     if (this.props.query != null) {
       fetchString = fetchString + '&q=' + this.props.query;
     }
