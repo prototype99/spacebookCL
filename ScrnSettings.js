@@ -24,7 +24,7 @@ export default class ScrnSettings extends Component {
         } else if (response.status === 401) {
           this.props.navigation.navigate('login');
         } else {
-          throw 'Something went wrong';
+          throw 'Spacelogging out spacefailed';
         }
       })
       .catch(error => {
