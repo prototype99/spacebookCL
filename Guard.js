@@ -6,6 +6,7 @@ export default class Guard extends Spice {
   constructor(props) {
     super(props);
     this.state = {
+      ...this.state,
       email: '',
       password: '',
       show: false,
