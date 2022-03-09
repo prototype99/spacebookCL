@@ -1,5 +1,4 @@
 import React from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button, Input, View} from 'native-base';
 import Spice from './Spice';
 export default class Guard extends Spice {
@@ -9,46 +8,9 @@ export default class Guard extends Spice {
       ...this.state,
       email: '',
       password: '',
-      show: false,
-      tokenProvided: false
+      show: false
     };
   }
-  handleUser = () => {
-    //Validation here...
-    return fetch(this.state.svurl + this.props.endPoint, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password,
-        first_name: this.props.firstName,
-        last_name: this.props.lastName
-      })
-    })
-      .then(response => {
-        if (response.status === 200) {
-          return response.json();
-        } else if (response.status === 201) {
-          return response.json();
-        } else if (response.status === 400) {
-          throw this.props.error400;
-        } else {
-          throw 'An astroerror has spaceocurred spacepreventing space' + this.props.error500;
-        }
-      })
-      .then(async responseJson => {
-        console.log(responseJson);
-        if (this.props.tokenProvided) {
-          await AsyncStorage.setItem('@session_token', responseJson.token);
-        }
-        this.props.navigation.navigate(this.props.nextPage);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
   render() {
     return (
       <View>
