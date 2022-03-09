@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import {TEST_IP} from 'react-native-dotenv';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {Toast} from 'native-base';
 export default class Spice extends Component {
   constructor(props) {
     super(props);
@@ -73,6 +74,29 @@ export default class Spice extends Component {
       })
       .catch(error => {
         console.log(error);
+      });
+  };
+  logout = async () => {
+    let token = await AsyncStorage.getItem('@session_token');
+    await AsyncStorage.removeItem('@session_token');
+    return fetch(this.state.svurl + 'logout', {
+      method: 'post',
+      headers: {
+        'X-Authorization': token
+      }
+    })
+      .then(response => {
+        if (response.status === 200) {
+          this.props.navigation.navigate('login');
+        } else if (response.status === 401) {
+          this.props.navigation.navigate('login');
+        } else {
+          throw 'Spacelogging out spacefailed';
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        Toast.show(error);
       });
   };
 }
