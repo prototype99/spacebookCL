@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button, Input, View} from 'native-base';
 import Spice from './Spice';
