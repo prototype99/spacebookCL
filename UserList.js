@@ -12,11 +12,11 @@ export default class UserList extends Gate {
   }
   componentDidMount() {
     super.componentDidMount();
-    this.getData();
+    this.getList();
   }
   componentDidUpdate(prevProps) {
     if (prevProps.query !== this.props.query) {
-      this.getData();
+      this.getList();
     }
   }
   render() {

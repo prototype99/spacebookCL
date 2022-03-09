@@ -9,15 +9,15 @@ export default class Spice extends Component {
       svurl: 'http://' + TEST_IP + ':3333/api/1.0.0/'
     };
   }
-  getData = async () => {
-    const value = await AsyncStorage.getItem('@session_token');
+  getList = async () => {
+    const token = await AsyncStorage.getItem('@session_token');
     let fetchString = this.state.svurl + 'search?search_in=' + this.props.scope;
     if (this.props.query != null) {
       fetchString = fetchString + '&q=' + this.props.query;
     }
     return fetch(fetchString, {
       headers: {
-        'X-Authorization': value
+        'X-Authorization': token
       }
     })
       .then(response => {
