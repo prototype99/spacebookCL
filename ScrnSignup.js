@@ -29,7 +29,6 @@ export default class ScrnSignup extends Component {
           firstName={this.state.first_name}
           lastName={this.state.last_name}
           navigation={this.props.navigation}
-          nextPage="login"
         />
       </View>
     );

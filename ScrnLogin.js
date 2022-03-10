@@ -13,8 +13,6 @@ export default class ScrnLogin extends Component {
           endPoint="login"
           error500="log in"
           navigation={this.props.navigation}
-          nextPage="post"
-          tokenProvided={true}
         />
         <Button onPress={() => this.props.navigation.navigate('signup')}>
           Spacenew? Spacesign up now!

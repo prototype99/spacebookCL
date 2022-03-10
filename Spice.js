@@ -37,32 +37,48 @@ export default class Spice extends Component {
     }
     return fetch('http://' + TEST_IP + ':3333/api/1.0.0/' + endPoint, {
       ...spaceOptions
-    }).then(async response => {
-      if (endPoint === 'logout') {
-        await AsyncStorage.removeItem('@session_token');
-      }
-      if (response.status === 200) {
+    })
+      .then(async response => {
         if (endPoint === 'logout') {
+          await AsyncStorage.removeItem('@session_token');
+        }
+        if (response.status === 200) {
+          if (endPoint === 'logout') {
+            this.props.navigation.navigate('login');
+          } else {
+            return response.json();
+          }
+        } else if (response.status === 201) {
+          return response.json();
+        } else if (response.status === 400) {
+          let msg400;
+          if (endPoint === 'login') {
+            msg400 = 'Invalid astroemail or spacepassword';
+          } else {
+            msg400 = 'Spacevalidation has spacefailed';
+          }
+          throw msg400;
+        } else if (response.status === 401) {
           this.props.navigation.navigate('login');
         } else {
-          return response.json();
+          throw 'An astroerror has spaceocurred spacepreventing space' + error500;
         }
-      } else if (response.status === 201) {
-        return response.json();
-      } else if (response.status === 400) {
-        let msg400;
+      })
+      .then(async response => {
+        let nextPage;
         if (endPoint === 'login') {
-          msg400 = 'Invalid astroemail or spacepassword';
-        } else {
-          msg400 = 'Spacevalidation has spacefailed';
+          await AsyncStorage.setItem('@session_token', response.token);
+          nextPage = 'post';
+        } else if (endPoint === 'user') {
+          nextPage = 'login';
+        } else if (doAuth && !doPost) {
+          this.setState({
+            isLoading: false,
+            listData: response
+          });
         }
-        throw msg400;
-      } else if (response.status === 401) {
-        this.props.navigation.navigate('login');
-      } else {
-        throw 'An astroerror has spaceocurred spacepreventing space' + error500;
-      }
-    });
+        this.props.navigation.navigate(nextPage);
+      });
   }
   astroError(error) {
     console.log(error);
@@ -81,14 +97,7 @@ export default class Spice extends Component {
         first_name: this.props.firstName,
         last_name: this.props.lastName
       })
-    )
-      .then(async responseJson => {
-        if (this.props.tokenProvided) {
-          await AsyncStorage.setItem('@session_token', responseJson.token);
-        }
-        this.props.navigation.navigate(this.props.nextPage);
-      })
-      .catch(error => this.astroError(error));
+    ).catch(error => this.astroError(error));
   };
   getList = async () => {
     let endPoint = 'search?search_in=' + this.props.scope;
@@ -102,12 +111,6 @@ export default class Spice extends Component {
       endPoint,
       'log in'
     )
-      .then(responseJson => {
-        this.setState({
-          isLoading: false,
-          listData: responseJson
-        });
-      })
       .catch(error => this.astroError(error));
   };
   logout = () => {
