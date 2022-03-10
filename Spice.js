@@ -47,14 +47,13 @@ export default class Spice extends Component {
       });
   };
   getList = async () => {
-    const token = await AsyncStorage.getItem('@session_token');
     let fetchString = this.state.svurl + 'search?search_in=' + this.props.scope;
     if (this.props.query != null) {
       fetchString = fetchString + '&q=' + this.props.query;
     }
     return fetch(fetchString, {
       headers: {
-        'X-Authorization': token
+        'X-Authorization': await AsyncStorage.getItem('@session_token')
       }
     })
       .then(response => {
@@ -77,15 +76,14 @@ export default class Spice extends Component {
       });
   };
   logout = async () => {
-    let token = await AsyncStorage.getItem('@session_token');
-    await AsyncStorage.removeItem('@session_token');
     return fetch(this.state.svurl + 'logout', {
       method: 'post',
       headers: {
-        'X-Authorization': token
+        'X-Authorization': await AsyncStorage.getItem('@session_token')
       }
     })
-      .then(response => {
+      .then(async response => {
+        await AsyncStorage.removeItem('@session_token');
         if (response.status === 200) {
           this.props.navigation.navigate('login');
         } else if (response.status === 401) {
