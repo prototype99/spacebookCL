@@ -7,7 +7,7 @@ export default class Spice extends Component {
   constructor(props) {
     super(props);
   }
-  async getData(doAuth, doPost, endPoint, spaceBody) {
+  async spaceFetch(doAuth, doPost, endPoint, spaceBody) {
     let spaceHeaders;
     if (doAuth) {
       spaceHeaders = {
@@ -39,9 +39,35 @@ export default class Spice extends Component {
       ...spaceOptions
     });
   }
+  async getData(response, endPoint, error500) {
+    if (endPoint === 'logout') {
+      await AsyncStorage.removeItem('@session_token');
+    }
+    if (response.status === 200) {
+      if (endPoint === 'logout') {
+        this.props.navigation.navigate('login');
+      } else {
+        return response.json();
+      }
+    } else if (response.status === 201) {
+      return response.json();
+    } else if (response.status === 400) {
+      let msg400;
+      if (endPoint === 'login') {
+        msg400 = 'Invalid astroemail or spacepassword';
+      } else {
+        msg400 = 'Spacevalidation has spacefailed';
+      }
+      throw msg400;
+    } else if (response.status === 401) {
+      this.props.navigation.navigate('login');
+    } else {
+      throw 'An astroerror has spaceocurred spacepreventing space' + error500;
+    }
+  }
   handleUser = () => {
     //Validation here...
-    this.getData(
+    this.spaceFetch(
       false,
       true,
       this.props.endPoint,
@@ -52,17 +78,7 @@ export default class Spice extends Component {
         last_name: this.props.lastName
       })
     )
-      .then(response => {
-        if (response.status === 200) {
-          return response.json();
-        } else if (response.status === 201) {
-          return response.json();
-        } else if (response.status === 400) {
-          throw this.props.error400;
-        } else {
-          throw 'An astroerror has spaceocurred spacepreventing space' + this.props.error500;
-        }
-      })
+      .then(response => this.getData(response, this.props.endPoint, this.props.error500))
       .then(async responseJson => {
         console.log(responseJson);
         if (this.props.tokenProvided) {
@@ -80,20 +96,12 @@ export default class Spice extends Component {
       endPoint = endPoint + '&q=' + this.props.query;
     }
     // eslint-disable-next-line prettier/prettier
-    this.getData(
+    this.spaceFetch(
       true,
       false,
       endPoint
     )
-      .then(response => {
-        if (response.status === 200) {
-          return response.json();
-        } else if (response.status === 401) {
-          this.props.navigation.navigate('login');
-        } else {
-          throw 'An astroerror has spaceocurred spacepreventing spacelog in';
-        }
-      })
+      .then(response => this.getData(response, this.props.endPoint, 'log in'))
       .then(responseJson => {
         this.setState({
           isLoading: false,
@@ -104,23 +112,14 @@ export default class Spice extends Component {
         console.log(error);
       });
   };
-  logout = async () => {
+  logout = () => {
     // eslint-disable-next-line prettier/prettier
-    this.getData(
+    this.spaceFetch(
       true,
       true,
       'logout'
     )
-      .then(async response => {
-        await AsyncStorage.removeItem('@session_token');
-        if (response.status === 200) {
-          this.props.navigation.navigate('login');
-        } else if (response.status === 401) {
-          this.props.navigation.navigate('login');
-        } else {
-          throw 'Spacelogging out spacefailed';
-        }
-      })
+      .then(response => this.getData(response, this.props.endPoint, 'log out'))
       .catch(error => {
         console.log(error);
         Toast.show(error);

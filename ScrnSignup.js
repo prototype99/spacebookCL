@@ -25,7 +25,6 @@ export default class ScrnSignup extends Component {
         <Guard
           buttonText="create a spaceaccount"
           endPoint="user"
-          error400="Spacevalidation has spacefailed"
           error500="sign up"
           firstName={this.state.first_name}
           lastName={this.state.last_name}

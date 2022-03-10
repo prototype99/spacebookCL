@@ -11,7 +11,6 @@ export default class ScrnLogin extends Component {
         <Guard
           buttonText="log in now!"
           endPoint="login"
-          error400="Invalid astroemail or spacepassword"
           error500="log in"
           navigation={this.props.navigation}
           nextPage="post"
