@@ -7,7 +7,7 @@ export default class Spice extends Component {
   constructor(props) {
     super(props);
   }
-  async spaceFetch(doAuth, doPost, endPoint, spaceBody) {
+  async spaceFetch(doAuth, doPost, endPoint, error500, spaceBody) {
     let spaceHeaders;
     if (doAuth) {
       spaceHeaders = {
@@ -37,7 +37,8 @@ export default class Spice extends Component {
     }
     return fetch('http://' + TEST_IP + ':3333/api/1.0.0/' + endPoint, {
       ...spaceOptions
-    });
+    })
+      .then(response => this.getData(response, endPoint, error500));
   }
   async getData(response, endPoint, error500) {
     if (endPoint === 'logout') {
@@ -75,6 +76,7 @@ export default class Spice extends Component {
       false,
       true,
       this.props.endPoint,
+      this.props.error500,
       JSON.stringify({
         email: this.state.email,
         password: this.state.password,
@@ -82,7 +84,6 @@ export default class Spice extends Component {
         last_name: this.props.lastName
       })
     )
-      .then(response => this.getData(response, this.props.endPoint, this.props.error500))
       .then(async responseJson => {
         console.log(responseJson);
         if (this.props.tokenProvided) {
@@ -101,9 +102,9 @@ export default class Spice extends Component {
     this.spaceFetch(
       true,
       false,
-      endPoint
+      endPoint,
+      'log in'
     )
-      .then(response => this.getData(response, this.props.endPoint, 'log in'))
       .then(responseJson => {
         this.setState({
           isLoading: false,
@@ -117,9 +118,9 @@ export default class Spice extends Component {
     this.spaceFetch(
       true,
       true,
-      'logout'
+      'logout',
+      'log out'
     )
-      .then(response => this.getData(response, this.props.endPoint, 'log out'))
       .catch(error => this.astroError(error));
   };
 }
