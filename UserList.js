@@ -10,13 +10,13 @@ export default class UserList extends Gate {
       listData: []
     };
   }
-  componentDidMount() {
+  async componentDidMount() {
     super.componentDidMount();
-    this.getList();
+    await this.getList();
   }
-  componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps) {
     if (prevProps.query !== this.props.query) {
-      this.getList();
+      await this.getList();
     }
   }
   render() {

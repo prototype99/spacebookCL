@@ -11,7 +11,7 @@ export default class Gate extends Spice {
       this.props.navigation.navigate('login');
     }
   };
-  componentDidMount() {
+  async componentDidMount() {
     this.unsubscribe = this.props.navigation.addListener('focus', () => {
       this.checkLoggedIn();
     });

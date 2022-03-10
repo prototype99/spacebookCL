@@ -78,15 +78,15 @@ export default class Spice extends Component {
           });
         }
         this.props.navigation.navigate(nextPage);
+      })
+      .catch(error => {
+        console.log(error);
+        Toast.show(error);
       });
   }
-  astroError(error) {
-    console.log(error);
-    Toast.show(error);
-  }
-  handleUser = () => {
+  handleUser = async () => {
     //Validation here...
-    this.spaceFetch(
+    await this.spaceFetch(
       false,
       true,
       this.props.endPoint,
@@ -97,7 +97,7 @@ export default class Spice extends Component {
         first_name: this.props.firstName,
         last_name: this.props.lastName
       })
-    ).catch(error => this.astroError(error));
+    );
   };
   getList = async () => {
     let endPoint = 'search?search_in=' + this.props.scope;
@@ -105,22 +105,20 @@ export default class Spice extends Component {
       endPoint = endPoint + '&q=' + this.props.query;
     }
     // eslint-disable-next-line prettier/prettier
-    this.spaceFetch(
+    await this.spaceFetch(
       true,
       false,
       endPoint,
       'log in'
-    )
-      .catch(error => this.astroError(error));
+    );
   };
-  logout = () => {
+  logout = async () => {
     // eslint-disable-next-line prettier/prettier
-    this.spaceFetch(
+    await this.spaceFetch(
       true,
       true,
       'logout',
       'log out'
-    )
-      .catch(error => this.astroError(error));
+    );
   };
 }
