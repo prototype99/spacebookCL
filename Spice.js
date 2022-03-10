@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import {TEST_IP} from 'react-native-dotenv';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Toast} from 'native-base';
+import {useToast} from 'native-base';
 export default class Spice extends Component {
   constructor(props) {
     super(props);
@@ -83,7 +83,7 @@ export default class Spice extends Component {
       })
       .catch(error => {
         console.log(error);
-        Toast.show({
+        useToast.show({
           description: error
         });
       });
