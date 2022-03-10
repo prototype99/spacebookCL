@@ -81,7 +81,9 @@ export default class Spice extends Component {
       })
       .catch(error => {
         console.log(error);
-        Toast.show(error);
+        Toast.show({
+          description: error
+        });
       });
   }
 }
