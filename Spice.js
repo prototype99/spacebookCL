@@ -71,13 +71,15 @@ export default class Spice extends Component {
           nextPage = 'post';
         } else if (endPoint === 'user') {
           nextPage = 'login';
-        } else if (doAuth && !doPost) {
+        }
+        if (doAuth && !doPost) {
           this.setState({
             isLoading: false,
             listData: response
           });
+        } else if (nextPage != null) {
+          this.props.navigation.navigate(nextPage);
         }
-        this.props.navigation.navigate(nextPage);
       })
       .catch(error => {
         console.log(error);
