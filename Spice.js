@@ -65,6 +65,10 @@ export default class Spice extends Component {
       throw 'An astroerror has spaceocurred spacepreventing space' + error500;
     }
   }
+  astroError(error) {
+    console.log(error);
+    Toast.show(error);
+  }
   handleUser = () => {
     //Validation here...
     this.spaceFetch(
@@ -86,9 +90,7 @@ export default class Spice extends Component {
         }
         this.props.navigation.navigate(this.props.nextPage);
       })
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(error => this.astroError(error));
   };
   getList = async () => {
     let endPoint = 'search?search_in=' + this.props.scope;
@@ -108,9 +110,7 @@ export default class Spice extends Component {
           listData: responseJson
         });
       })
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(error => this.astroError(error));
   };
   logout = () => {
     // eslint-disable-next-line prettier/prettier
@@ -120,9 +120,6 @@ export default class Spice extends Component {
       'logout'
     )
       .then(response => this.getData(response, this.props.endPoint, 'log out'))
-      .catch(error => {
-        console.log(error);
-        Toast.show(error);
-      });
+      .catch(error => this.astroError(error));
   };
 }
