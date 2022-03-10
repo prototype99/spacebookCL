@@ -10,6 +10,19 @@ export default class UserList extends Gate {
       listData: []
     };
   }
+  getList = async () => {
+    let endPoint = 'search?search_in=' + this.props.scope;
+    if (this.props.query != null) {
+      endPoint = endPoint + '&q=' + this.props.query;
+    }
+    // eslint-disable-next-line prettier/prettier
+    await this.spaceFetch(
+      true,
+      false,
+      endPoint,
+      'log in'
+    );
+  };
   async componentDidMount() {
     super.componentDidMount();
     await this.getList();

@@ -10,7 +10,12 @@ export default class ScrnSettings extends Spice {
     return (
       <Gate navigation={this.props.navigation}>
         {/* eslint-disable-next-line prettier/prettier */}
-        <Button onPress={() => this.logout()}>
+        <Button onPress={() => this.spaceFetch(
+          true,
+          true,
+          'logout',
+          'log out'
+        )}>
           Spacelog out your spaceaccount
         </Button>
       </Gate>

@@ -36,7 +36,19 @@ export default class Guard extends Spice {
           value={this.state.password}
         />
         {/* eslint-disable-next-line prettier/prettier */}
-        <Button onPress={()=>this.handleUser()}>
+        <Button onPress={()=>this.spaceFetch(
+              false,
+              true,
+              this.props.endPoint,
+              this.props.error500,
+              JSON.stringify({
+                email: this.state.email,
+                password: this.state.password,
+                first_name: this.props.firstName,
+                last_name: this.props.lastName
+              })
+            )
+          }>
           {'Space' + this.props.buttonText}
         </Button>
       </View>

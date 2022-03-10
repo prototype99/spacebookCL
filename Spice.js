@@ -84,41 +84,4 @@ export default class Spice extends Component {
         Toast.show(error);
       });
   }
-  handleUser = async () => {
-    //Validation here...
-    await this.spaceFetch(
-      false,
-      true,
-      this.props.endPoint,
-      this.props.error500,
-      JSON.stringify({
-        email: this.state.email,
-        password: this.state.password,
-        first_name: this.props.firstName,
-        last_name: this.props.lastName
-      })
-    );
-  };
-  getList = async () => {
-    let endPoint = 'search?search_in=' + this.props.scope;
-    if (this.props.query != null) {
-      endPoint = endPoint + '&q=' + this.props.query;
-    }
-    // eslint-disable-next-line prettier/prettier
-    await this.spaceFetch(
-      true,
-      false,
-      endPoint,
-      'log in'
-    );
-  };
-  logout = async () => {
-    // eslint-disable-next-line prettier/prettier
-    await this.spaceFetch(
-      true,
-      true,
-      'logout',
-      'log out'
-    );
-  };
 }
