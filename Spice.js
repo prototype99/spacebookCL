@@ -83,7 +83,6 @@ export default class Spice extends Component {
       })
     )
       .then(async responseJson => {
-        console.log(responseJson);
         if (this.props.tokenProvided) {
           await AsyncStorage.setItem('@session_token', responseJson.token);
         }
