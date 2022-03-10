@@ -5,7 +5,7 @@ export default class ScrnSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: null
+      query: ''
     };
   }
   render() {
