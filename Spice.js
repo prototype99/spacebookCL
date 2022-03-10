@@ -6,24 +6,52 @@ import {Toast} from 'native-base';
 export default class Spice extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      svurl: 'http://' + TEST_IP + ':3333/api/1.0.0/'
+  }
+  async getData(doAuth, doPost, endPoint, spaceBody) {
+    let spaceHeaders;
+    if (doAuth) {
+      spaceHeaders = {
+        'X-Authorization': await AsyncStorage.getItem('@session_token')
+      };
+    } else {
+      spaceHeaders = {
+        'Content-Type': 'application/json'
+      };
+    }
+    let spaceOptions = {
+      headers: {
+        ...spaceHeaders
+      }
     };
+    if (doPost) {
+      spaceOptions = {
+        ...spaceOptions,
+        method: 'post'
+      };
+    }
+    if (spaceBody != null) {
+      spaceOptions = {
+        ...spaceOptions,
+        body: spaceBody
+      };
+    }
+    return fetch('http://' + TEST_IP + ':3333/api/1.0.0/' + endPoint, {
+      ...spaceOptions
+    });
   }
   handleUser = () => {
     //Validation here...
-    return fetch(this.state.svurl + this.props.endPoint, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
+    this.getData(
+      false,
+      true,
+      this.props.endPoint,
+      JSON.stringify({
         email: this.state.email,
         password: this.state.password,
         first_name: this.props.firstName,
         last_name: this.props.lastName
       })
-    })
+    )
       .then(response => {
         if (response.status === 200) {
           return response.json();
@@ -47,15 +75,16 @@ export default class Spice extends Component {
       });
   };
   getList = async () => {
-    let fetchString = this.state.svurl + 'search?search_in=' + this.props.scope;
+    let endPoint = 'search?search_in=' + this.props.scope;
     if (this.props.query != null) {
-      fetchString = fetchString + '&q=' + this.props.query;
+      endPoint = endPoint + '&q=' + this.props.query;
     }
-    return fetch(fetchString, {
-      headers: {
-        'X-Authorization': await AsyncStorage.getItem('@session_token')
-      }
-    })
+    // eslint-disable-next-line prettier/prettier
+    this.getData(
+      true,
+      false,
+      endPoint
+    )
       .then(response => {
         if (response.status === 200) {
           return response.json();
@@ -76,12 +105,12 @@ export default class Spice extends Component {
       });
   };
   logout = async () => {
-    return fetch(this.state.svurl + 'logout', {
-      method: 'post',
-      headers: {
-        'X-Authorization': await AsyncStorage.getItem('@session_token')
-      }
-    })
+    // eslint-disable-next-line prettier/prettier
+    this.getData(
+      true,
+      true,
+      'logout'
+    )
       .then(async response => {
         await AsyncStorage.removeItem('@session_token');
         if (response.status === 200) {
