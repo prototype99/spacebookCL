@@ -6,14 +6,18 @@ import ScrnPost from './ScrnPost';
 import ScrnSettings from './ScrnSettings';
 import ScrnSignup from './ScrnSignup';
 import ScrnSearch from './ScrnSearch';
-import {Button, Heading, NativeBaseProvider} from 'native-base';
+import {ArrowBackIcon, Heading, IconButton, NativeBaseProvider} from 'native-base';
 import ScrnUser from './ScrnUser';
 const Stack = createNativeStackNavigator();
 export function BackButton(navigation) {
   if (navigation.canGoBack()) {
-    // eslint-disable-next-line prettier/prettier
     return (
-      <Button onPress={() => navigation.goBack()}>{'<'}</Button>
+      <IconButton
+        accessibilityHint="Navigates to the previous screen"
+        accessibilityLabel="Go back"
+        icon={<ArrowBackIcon />}
+        onPress={() => navigation.goBack()}
+      />
     );
   }
 }
