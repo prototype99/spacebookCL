@@ -10,10 +10,12 @@ import {Button, Heading, NativeBaseProvider} from 'native-base';
 import ScrnUser from './ScrnUser';
 const Stack = createNativeStackNavigator();
 export function BackButton(navigation) {
-  // eslint-disable-next-line prettier/prettier
-  return (
-    <Button onPress={() => navigation.goBack()}>{'<'}</Button>
-  );
+  if (navigation.canGoBack()) {
+    // eslint-disable-next-line prettier/prettier
+    return (
+      <Button onPress={() => navigation.goBack()}>{'<'}</Button>
+    );
+  }
 }
 export default function App() {
   return (
