@@ -10,7 +10,6 @@ export default class ScrnUser extends Spice {
     };
   }
   async componentDidMount() {
-    console.log(this.props.route.params.user_id);
     // eslint-disable-next-line prettier/prettier
     await this.spaceFetch(
       true,
