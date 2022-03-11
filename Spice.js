@@ -72,6 +72,8 @@ export default class Spice extends Component {
           throw msg400;
         } else if (response.status === 401) {
           this.props.navigation.navigate('login');
+        } else if (response.status === 404) {
+          throw 'Spacedata not spacefound';
         } else {
           throw 'An astroerror has spaceocurred spacepreventing space' + error500;
         }
