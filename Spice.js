@@ -102,7 +102,10 @@ export default class Spice extends Component {
       })
       .catch(error => {
         console.log(error);
-        useToast().show({
+        const toast = useToast();
+        toast.show({
+          title: 'Astroerror spacencountered',
+          status: 'error',
           description: error
         });
       });
