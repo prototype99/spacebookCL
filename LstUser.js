@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, FlatList, Spinner, View} from 'native-base';
 import Gate from './Gate';
-export default class UserList extends Gate {
+export default class LstUser extends Gate {
   constructor(props) {
     super(props);
     this.state = {
