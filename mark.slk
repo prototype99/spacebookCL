@@ -422,7 +422,7 @@ C;X8;K1
 C;X10;K"linter"
 C;X11;K1
 C;Y6;X1;K"get user info"
-C;X2;K0
+C;X2;K1
 C;X7;K"accessibility"
 C;X8;K1
 C;X10;K"mark"
@@ -462,7 +462,7 @@ C;X2;K0
 C;Y22;X1;K"unlike post"
 C;X2;K0
 C;Y23;X1;K"endpoints done:"
-C;X2;K4;Esum(R[-20]C:R[-1]C)
+C;X2;K5;Esum(R[-20]C:R[-1]C)
 C;Y24;X1;K"bugs/inefficiencies"
 C;X2;K1
 C;Y25;X1;K"mark"
