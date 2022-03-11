@@ -6,7 +6,7 @@ import ScrnPost from './ScrnPost';
 import ScrnSettings from './ScrnSettings';
 import ScrnSignup from './ScrnSignup';
 import ScrnSearch from './ScrnSearch';
-import {Heading, NativeBaseProvider} from 'native-base';
+import {Button, Heading, NativeBaseProvider} from 'native-base';
 import ScrnUser from './ScrnUser';
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -17,62 +17,68 @@ export default function App() {
           <Stack.Screen
             name="post"
             component={ScrnPost}
-            options={{
+            options={({navigation}) => ({
+              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Spacetacular spaceposts
               </Heading>
-            }}
+            })}
           />
           <Stack.Screen
             name="login"
             component={ScrnLogin}
-            options={{
+            options={({navigation}) => ({
+              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Spacepossibilities spaceawait!
               </Heading>
-            }}
+            })}
           />
           <Stack.Screen
             name="search"
             component={ScrnSearch}
-            options={{
+            options={({navigation}) => ({
+              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Spaceselocate astronauts
               </Heading>
-            }}
+            })}
           />
           <Stack.Screen
             name="settings"
             component={ScrnSettings}
-            options={{
+            options={({navigation}) => ({
+              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Spacesettings and spacelog out
               </Heading>
-            }}
+            })}
           />
           <Stack.Screen
             name="signup"
             component={ScrnSignup}
-            options={{
+            options={({navigation}) => ({
+              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Your spacejourney spacebegins!
               </Heading>
-            }}
+            })}
           />
           <Stack.Screen
             name="user"
             component={ScrnUser}
-            options={{
+            options={({navigation}) => ({
+              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Spaceuser spaceinformation
               </Heading>
-            }}
+            })}
           />
         </Stack.Navigator>
       </NavigationContainer>
