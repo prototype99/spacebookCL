@@ -6,6 +6,7 @@ export default class ScrnUser extends Spice {
   constructor(props) {
     super(props);
     this.state = {
+      ...this.state,
       endPoint: 'user/' + this.props.route.params.user_id
     };
   }
