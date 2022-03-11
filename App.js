@@ -30,7 +30,7 @@ export default function App() {
             options={{
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
-                Endless spacepossibilities spaceawait!
+                Spacepossibilities spaceawait!
               </Heading>
             }}
           />
@@ -70,7 +70,7 @@ export default function App() {
             options={{
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
-                Spaceview spaceuser spaceinformation
+                Spaceuser spaceinformation
               </Heading>
             }}
           />
