@@ -6,7 +6,7 @@ import ScrnPost from './ScrnPost';
 import ScrnSettings from './ScrnSettings';
 import ScrnSignup from './ScrnSignup';
 import ScrnSearch from './ScrnSearch';
-import {NativeBaseProvider} from 'native-base';
+import {Heading, NativeBaseProvider} from 'native-base';
 import ScrnUser from './ScrnUser';
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -18,42 +18,60 @@ export default function App() {
             name="post"
             component={ScrnPost}
             options={{
-              title: 'Spacetacular spaceposts'
+              // eslint-disable-next-line prettier/prettier
+              headerTitle: () => <Heading>
+                Spacetacular spaceposts
+              </Heading>
             }}
           />
           <Stack.Screen
             name="login"
             component={ScrnLogin}
             options={{
-              title: 'Endless spacepossibilities spaceawait!'
+              // eslint-disable-next-line prettier/prettier
+              headerTitle: () => <Heading>
+                Endless spacepossibilities spaceawait!
+              </Heading>
             }}
           />
           <Stack.Screen
             name="search"
             component={ScrnSearch}
             options={{
-              title: 'Spaceselocate astronauts'
+              // eslint-disable-next-line prettier/prettier
+              headerTitle: () => <Heading>
+                Spaceselocate astronauts
+              </Heading>
             }}
           />
           <Stack.Screen
             name="settings"
             component={ScrnSettings}
             options={{
-              title: 'Spacesettings and spacelog out'
+              // eslint-disable-next-line prettier/prettier
+              headerTitle: () => <Heading>
+                Spacesettings and spacelog out
+              </Heading>
             }}
           />
           <Stack.Screen
             name="signup"
             component={ScrnSignup}
             options={{
-              title: 'Your spacejourney spacebegins!'
+              // eslint-disable-next-line prettier/prettier
+              headerTitle: () => <Heading>
+                Your spacejourney spacebegins!
+              </Heading>
             }}
           />
           <Stack.Screen
             name="user"
             component={ScrnUser}
             options={{
-              title: 'Spaceview spaceuser spaceinformation'
+              // eslint-disable-next-line prettier/prettier
+              headerTitle: () => <Heading>
+                Spaceview spaceuser spaceinformation
+              </Heading>
             }}
           />
         </Stack.Navigator>
