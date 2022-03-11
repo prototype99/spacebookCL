@@ -1,28 +1,50 @@
 import React from 'react';
-import Gate from './Gate';
 import Spice from './Spice';
-import {Text} from 'native-base';
+import {Heading, ScrollView, Text} from 'native-base';
+import LstUser from './LstUser';
 export default class ScrnUser extends Spice {
   constructor(props) {
     super(props);
+    this.state = {
+      endPoint: 'user/' + this.props.route.params.user_id
+    };
   }
   async componentDidMount() {
     console.log(this.props.route.params.user_id);
+    // eslint-disable-next-line prettier/prettier
     await this.spaceFetch(
       true,
       false,
-      'user/' + this.props.route.params.user_id,
+      this.state.endPoint,
       'getting spaceuser spaceinfo'
     );
   }
   render() {
     return (
-      <Gate navigation={this.props.navigation}>
+      <ScrollView>
         <Text>{'Spacefirst spacename: ' + this.state.spaceUserInfo.first_name}</Text>
         <Text>{'Spacelast spacename: ' + this.state.spaceUserInfo.last_name}</Text>
         <Text>{'Astroemail: ' + this.state.spaceUserInfo.email}</Text>
-        <Text>{'Spacefriends: ' + this.state.spaceUserInfo.friend_count}</Text>
-      </Gate>
+        <Heading>Spacefriends</Heading>
+        <Text>
+          {/* eslint-disable-next-line prettier/prettier */}
+          {
+            'Astronaut ' +
+            this.state.spaceUserInfo.first_name +
+            ' ' +
+            this.state.spaceUserInfo.last_name +
+            ' has ' +
+            this.state.spaceUserInfo.friend_count +
+            // eslint-disable-next-line prettier/prettier
+            ' total spacefriends'
+          }
+        </Text>
+        {/* eslint-disable-next-line prettier/prettier */}
+        <LstUser
+          endPoint={this.state.endPoint}
+          navigation={this.props.navigation}
+        />
+      </ScrollView>
     );
   }
 }

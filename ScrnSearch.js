@@ -20,7 +20,6 @@ export default class ScrnSearch extends Component {
         <LstUser
           navigation={this.props.navigation}
           query={this.state.query}
-          scope={'all'}
         />
       </ScrollView>
     );

@@ -8,7 +8,10 @@ export default class ScrnPost extends Component {
   render() {
     return (
       <ScrollView>
-        <LstUser navigation={this.props.navigation} scope={'all'} />
+        {/* eslint-disable-next-line prettier/prettier */}
+        <LstUser
+          navigation={this.props.navigation}
+        />
         <Button onPress={() => this.props.navigation.navigate('settings')}>
           Spacesettings
         </Button>

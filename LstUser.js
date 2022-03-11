@@ -11,9 +11,14 @@ export default class LstUser extends Gate {
     };
   }
   getList = async () => {
-    let endPoint = 'search?search_in=' + this.props.scope;
+    let endPoint = 'search?search_in=';
     if (this.props.query != null) {
-      endPoint = endPoint + '&q=' + this.props.query;
+      endPoint = endPoint + 'all&q=' + this.props.query;
+    } else {
+      if (this.props.endPoint != null) {
+        endPoint = this.props.endPoint + '/';
+      }
+      endPoint = endPoint + 'friends';
     }
     // eslint-disable-next-line prettier/prettier
     await this.spaceFetch(
@@ -43,7 +48,7 @@ export default class LstUser extends Gate {
             <View>
               <Button
                 onPress={() =>
-                  this.props.navigation.navigate('user', {
+                  this.props.navigation.push('user', {
                     user_id: item.user_id
                   })
                 }>
