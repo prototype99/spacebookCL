@@ -9,6 +9,12 @@ import ScrnSearch from './ScrnSearch';
 import {Button, Heading, NativeBaseProvider} from 'native-base';
 import ScrnUser from './ScrnUser';
 const Stack = createNativeStackNavigator();
+export function BackButton(navigation) {
+  // eslint-disable-next-line prettier/prettier
+  return (
+    <Button onPress={() => navigation.goBack()}>{'<'}</Button>
+  );
+}
 export default function App() {
   return (
     <NativeBaseProvider>
@@ -18,7 +24,7 @@ export default function App() {
             name="post"
             component={ScrnPost}
             options={({navigation}) => ({
-              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
+              headerLeft: () => BackButton(navigation),
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Spacetacular spaceposts
@@ -29,7 +35,7 @@ export default function App() {
             name="login"
             component={ScrnLogin}
             options={({navigation}) => ({
-              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
+              headerLeft: () => BackButton(navigation),
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Spacepossibilities spaceawait!
@@ -40,7 +46,7 @@ export default function App() {
             name="search"
             component={ScrnSearch}
             options={({navigation}) => ({
-              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
+              headerLeft: () => BackButton(navigation),
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Spaceselocate astronauts
@@ -51,7 +57,7 @@ export default function App() {
             name="settings"
             component={ScrnSettings}
             options={({navigation}) => ({
-              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
+              headerLeft: () => BackButton(navigation),
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Spacesettings and spacelog out
@@ -62,7 +68,7 @@ export default function App() {
             name="signup"
             component={ScrnSignup}
             options={({navigation}) => ({
-              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
+              headerLeft: () => BackButton(navigation),
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Your spacejourney spacebegins!
@@ -73,7 +79,7 @@ export default function App() {
             name="user"
             component={ScrnUser}
             options={({navigation}) => ({
-              headerLeft: () => <Button onPress={() => navigation.goBack()}>{'<'}</Button>,
+              headerLeft: () => BackButton(navigation),
               // eslint-disable-next-line prettier/prettier
               headerTitle: () => <Heading>
                 Spaceuser spaceinformation
