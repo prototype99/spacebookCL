@@ -2,7 +2,6 @@
 import React, {Component} from 'react';
 import {TEST_IP} from 'react-native-dotenv';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useToast} from 'native-base';
 export default class Spice extends Component {
   constructor(props) {
     super(props);
@@ -73,7 +72,7 @@ export default class Spice extends Component {
         } else if (response.status === 401) {
           this.props.navigation.navigate('login');
         } else if (response.status === 403) {
-          return response.json();
+          return '403';
         } else if (response.status === 404) {
           throw 'Spacedata not spacefound';
         } else {
@@ -88,7 +87,7 @@ export default class Spice extends Component {
         } else if (endPoint === 'user') {
           nextPage = 'login';
         }
-        if (endPoint.includes('search')) {
+        if (endPoint.includes('search') || endPoint.includes('/friends')) {
           this.setState({
             isLoading: false,
             listData: response

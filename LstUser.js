@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, FlatList, Spinner, View} from 'native-base';
+import {Button, FlatList, Spinner, Text, View} from 'native-base';
 import Gate from './Gate';
 export default class LstUser extends Gate {
   constructor(props) {
@@ -41,6 +41,12 @@ export default class LstUser extends Gate {
     if (this.state.isLoading) {
       return <Spinner />;
     } else {
+      if (this.state.listData === '403') {
+        return (
+          // eslint-disable-next-line prettier/prettier
+          <Text>you are spaceonly spaceallowed to spacesee their spacefriends if you are also a spacefriend, spaceconsider spacesending a spacefriend spacerequest</Text>
+        );
+      }
       return (
         <FlatList
           data={this.state.listData}
