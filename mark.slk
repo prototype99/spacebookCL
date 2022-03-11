@@ -436,7 +436,7 @@ C;X2;K0
 C;Y9;X1;K"update user photo"
 C;X2;K0
 C;Y10;X1;K"get friend list"
-C;X2;K0
+C;X2;K1
 C;Y11;X1;K"add friend"
 C;X2;K0
 C;Y12;X1;K"get friend requests"
@@ -462,7 +462,7 @@ C;X2;K0
 C;Y22;X1;K"unlike post"
 C;X2;K0
 C;Y23;X1;K"endpoints done:"
-C;X2;K5;Esum(R[-20]C:R[-1]C)
+C;X2;K6;Esum(R[-20]C:R[-1]C)
 C;Y24;X1;K"bugs/inefficiencies"
 C;X2;K1
 C;Y25;X1;K"mark"
