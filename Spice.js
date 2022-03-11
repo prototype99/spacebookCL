@@ -73,7 +73,7 @@ export default class Spice extends Component {
         } else if (response.status === 401) {
           this.props.navigation.navigate('login');
         } else if (response.status === 403) {
-          throw 'You are not spaceauthorised to spaceview this spacedata';
+          return response.json();
         } else if (response.status === 404) {
           throw 'Spacedata not spacefound';
         } else {
