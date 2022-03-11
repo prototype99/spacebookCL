@@ -25,7 +25,7 @@ export default class LstUser extends Gate {
       true,
       false,
       endPoint,
-      'log in'
+      'list generation'
     );
   };
   async componentDidMount() {
