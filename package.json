@@ -23,7 +23,7 @@
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-native": "^4.0.0",
     "eslint-scope": "^5.1.1",
-    "expo": "~44.0.0",
+    "expo": "~47.0.9",
     "expo-status-bar": "~1.2.0",
     "native-base": "^3.3.7",
     "react": "17.0.2",
